@@ -1,22 +1,46 @@
-<table mat-table class="mat-elevation-z8">
+<<<<<<< HEAD
+<table mat-table class="mat-elevation-z8 demo-table">
 
-    <ng-container *ngFor ="let tempProduct of products">
-        <th mat-header-cell *matHeaderCellDef> Name </th>
-        <td mat-cell *matCellDef="let element"> {{ tempProduct.name }} </td>
-      </ng-container>
-
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Name Column -->
     <thead>
+=======
+<table class="table table-striped table-bordered table-hover">
+    <thead class="thead-dark">
+>>>>>>> parent of c79fb33 (Replace bootstrap with Angular Material)
         <tr>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Units in Stock</th>
+            <th> Name </th>
+            <th> Unit Price </th>
+            <th> Units in Stock </th>
         </tr>
     </thead>
+  
+    <!-- Weight Column -->
     <tbody>
-        <tr *ngFor ="let tempProduct of products">
-            <td>{{ tempProduct.name }}</td>
-            <td>{{ tempProduct.unitPrice | currency:'PHP'}}</td>
-            <td>{{ tempProduct.unitsInStock }}</td>
+        <tr *ngFor="let element of products">
+            <td> {{element.name}} </td>
+            <td> {{element.unitPrice | currency: 'USD'}} </td>
+            <td> {{element.unitsInStock}} </td>
         </tr>
+      
     </tbody>
+<<<<<<< HEAD
+  </table>
+  
+  
+=======
 </table>
+
+
+
+
+
+<!--
+
+<p *ngFor ="let tempProduct of products">
+    {{ tempProduct.name }}: {{ tempProduct.unitPrice | currency:'USD'}}
+</p>
+-->
+>>>>>>> parent of c79fb33 (Replace bootstrap with Angular Material)
