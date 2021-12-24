@@ -10,7 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  product!: Product;
+  product: Product = new Product();
 
   constructor(private productService: ProductService,
               private route: ActivatedRoute) { }
