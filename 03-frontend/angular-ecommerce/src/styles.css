@@ -737,8 +737,13 @@ table.table.table-bordered th {
   font-weight: 800;
   color: #0da8e4;
 }
+
 .detail-section {
   margin-top: 60px;
+}
+
+.detail-img {
+  width: 30%;
 }
 /**/
 
