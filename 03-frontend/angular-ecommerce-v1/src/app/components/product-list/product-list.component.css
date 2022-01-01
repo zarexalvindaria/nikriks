@@ -1,0 +1,7 @@
+.product-name {
+  text-decoration: none;
+}
+
+a:hover .product-name {
+  color: #004d72 !important;
+}
