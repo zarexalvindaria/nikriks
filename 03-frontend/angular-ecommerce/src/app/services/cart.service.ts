@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { timeStamp } from 'console';
 import { Subject } from 'rxjs';
 import { CartItem } from '../common/cart-item';
 
@@ -14,7 +13,7 @@ export class CartService {
 
   constructor() {}
 
-  addtoCart(theCartItem: CartItem) {
+  addToCart(theCartItem: CartItem) {
     // check if we already have the item in our cart
     let alreadyExistsInCart: boolean = false;
     let existingCartItem!: CartItem;
