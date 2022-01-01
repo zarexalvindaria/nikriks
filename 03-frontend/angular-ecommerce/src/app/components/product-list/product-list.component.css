@@ -1,0 +1,7 @@
+.product-name {
+  text-decoration: none;
+}
+
+.product-box h1:hover {
+  color: #004d72 !important;
+}
