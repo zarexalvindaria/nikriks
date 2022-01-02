@@ -1,0 +1,2 @@
+docker build -t fullstackapp:latest .
+docker run --name fullstackapp -p 3310:3306 -d fullstackapp:latest
