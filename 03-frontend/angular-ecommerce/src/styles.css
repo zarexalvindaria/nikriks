@@ -802,6 +802,10 @@ footer ul li {
   padding: 10px 20px;
 }
 
+footer > ul {
+  margin: 0;
+}
+
 /* 
  * ----------------------------
  * Media Queries
