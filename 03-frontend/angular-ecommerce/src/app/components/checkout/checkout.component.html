@@ -156,7 +156,7 @@
 
         <!-- Credit Card Information -->
 
-        <div formGroupName="billingAddress" class="form-area">
+        <div formGroupName="creditCard" class="form-area">
           <h3>Credit Card</h3>
 
           <div class="row">
@@ -217,6 +217,18 @@
                   <option>TO DO</option>
                 </select>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Order details -->
+        <div class="form-area">
+          <div class="col-md-9">
+            <h3>Review Your Order</h3>
+            <div class="input-space">
+              <p>Total Quantity: {{ totalQuantity }}</p>
+              <p>Shipping: FREE</p>
+              <p>Total Price: {{ totalPrice | currency: "PHP" }}</p>
             </div>
           </div>
         </div>

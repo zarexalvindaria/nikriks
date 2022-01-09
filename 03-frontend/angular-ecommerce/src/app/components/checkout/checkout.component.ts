@@ -7,6 +7,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./checkout.component.css'],
 })
 export class CheckoutComponent implements OnInit {
+  totalPrice: number = 0;
+  totalQuantity: number = 0;
   checkoutFormGroup!: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {}
@@ -32,7 +34,7 @@ export class CheckoutComponent implements OnInit {
         country: [''],
         zipCode: [''],
       }),
-      creditCart: this.formBuilder.group({
+      creditCard: this.formBuilder.group({
         cardType: [''],
         nameOnCard: [''],
         cardNumber: [''],
@@ -45,11 +47,11 @@ export class CheckoutComponent implements OnInit {
 
   copyShippingAddressToBillingAddress(event: any) {
     if (event.target.checked) {
-      this.checkoutFormGroup.controls['billingAddress'].setValue(
-        this.checkoutFormGroup.controls['shippingAddress'].value
+      this.checkoutFormGroup!.controls['billingAddress'].setValue(
+        this.checkoutFormGroup!.controls['shippingAddress'].value
       );
     } else {
-      this.checkoutFormGroup.controls['billingAddress'].reset();
+      this.checkoutFormGroup!.controls['billingAddress'].reset();
     }
   }
 
@@ -58,7 +60,7 @@ export class CheckoutComponent implements OnInit {
     console.log(this.checkoutFormGroup!.get('customer')!.value);
     console.log(
       'The email address is ' +
-        this.checkoutFormGroup.get('customer')!.value.email
+        this.checkoutFormGroup!.get('customer')!.value.email
     );
   }
 }
