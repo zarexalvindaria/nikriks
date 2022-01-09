@@ -531,7 +531,8 @@ input.au-input.au-input-xl {
   background: #fff;
 }
 .main-content.page-m {
-  padding: 10% 15% !important;
+  /* padding: 10% 15% !important; */
+  padding: 10% 30% 10% 5% !important;
 }
 
 /* 
@@ -596,7 +597,7 @@ input.au-input.au-input-xl {
   background: #e5e5e5;
   padding: 10px 20px;
   font-weight: 500;
-  z-index: 23;
+  /* z-index: 23; */
   display: inline-block;
 }
 .input-space {
@@ -963,8 +964,7 @@ footer > ul {
     margin-right: 15px;
   }
   .main-content.page-m {
-    /* padding: 10% 0 !important; */
-    padding: 10% 30% 10% 5% !important;
+    padding: 10% 0 !important;
   }
   .header-mobile .navbar-mobile {
     display: none;
