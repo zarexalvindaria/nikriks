@@ -25,7 +25,7 @@ export class CheckoutComponent implements OnInit {
         country: [''],
         zipCode: [''],
       }),
-      billinggAddress: this.formBuilder.group({
+      billingAddress: this.formBuilder.group({
         street: [''],
         city: [''],
         state: [''],
@@ -42,9 +42,20 @@ export class CheckoutComponent implements OnInit {
       }),
     });
   }
+
+  copyShippingAddressToBillingAddress(event: any) {
+    if (event.target.checked) {
+      this.checkoutFormGroup.controls['billingAddress'].setValue(
+        this.checkoutFormGroup.controls['shippingAddress'].value
+      );
+    } else {
+      this.checkoutFormGroup.controls['billingAddress'].reset();
+    }
+  }
+
   onSubmit() {
     console.log('Handling the submit button');
-    console.log(this.checkoutFormGroup.get('customer')!.value);
+    console.log(this.checkoutFormGroup!.get('customer')!.value);
     console.log(
       'The email address is ' +
         this.checkoutFormGroup.get('customer')!.value.email
