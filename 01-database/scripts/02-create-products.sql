@@ -43,7 +43,7 @@ AUTO_INCREMENT = 1;
 -- Add sample data
 -- -----------------------------------------------------
 
-INSERT INTO product_category(category_name) VALUES ('DOG FOOD');
+INSERT INTO product_category(category_name) VALUES ('Dog Food');
 
 INSERT INTO product (sku, name, description, image_url, active, units_in_stock,
 unit_price, category_id, date_created)
