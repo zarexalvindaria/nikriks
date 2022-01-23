@@ -1,15 +1,15 @@
 -- -----------------------------------------------------
--- Schema full-stack-petsupply
+-- Schema full-stack-nikriks
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `full-stack-petsupply`;
+DROP SCHEMA IF EXISTS `full-stack-nikriks`;
 
-CREATE SCHEMA `full-stack-petsupply`;
-USE `full-stack-petsupply` ;
+CREATE SCHEMA `full-stack-nikriks`;
+USE `full-stack-nikriks` ;
 
 -- -----------------------------------------------------
--- Table `full-stack-petsupply`.`product_category`
+-- Table `full-stack-nikriks`.`product_category`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `full-stack-petsupply`.`product_category` (
+CREATE TABLE IF NOT EXISTS `full-stack-nikriks`.`product_category` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
   `category_name` VARCHAR(255) NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
@@ -17,9 +17,9 @@ ENGINE=InnoDB
 AUTO_INCREMENT = 1;
 
 -- -----------------------------------------------------
--- Table `full-stack-petsupply`.`product`
+-- Table `full-stack-nikriks`.`product`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `full-stack-petsupply`.`product` (
+CREATE TABLE IF NOT EXISTS `full-stack-nikriks`.`product` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
   `sku` VARCHAR(255) DEFAULT NULL,
   `name` VARCHAR(255) DEFAULT NULL,
@@ -41,22 +41,27 @@ AUTO_INCREMENT = 1;
 -- -----------------------------------------------------
 -- Categories
 -- -----------------------------------------------------
-INSERT INTO product_category(category_name) VALUES ('Clothes');
-INSERT INTO product_category(category_name) VALUES ('Foods & Drinks');
-INSERT INTO product_category(category_name) VALUES ('Medicines');
-INSERT INTO product_category(category_name) VALUES ('Accessories');
+INSERT INTO product_category(category_name) VALUES ('Specials');
+INSERT INTO product_category(category_name) VALUES ('A La Carte (For Sharing)');
+INSERT INTO product_category(category_name) VALUES ('Rice Meals');
+INSERT INTO product_category(category_name) VALUES ('Extras');
 
 -- -----------------------------------------------------
 -- Books
 -- -----------------------------------------------------
-INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('CLOTHES-1000', 'Dog Sanitary Panty', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin dui et dui euismod malesuada. Nunc hendrerit pulvinar tellus, posuere molestie libero volutpat quis. Donec arcu nisl, cursus non neque non, consequat ornare nunc.', 'assets/images/products/placeholder.png', 1, 100, 129, 1, NOW());
-INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('CLOTHES-1001', 'Dog Princess Temperament Dress', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin dui et dui euismod malesuada. Nunc hendrerit pulvinar tellus, posuere molestie libero volutpat quis. Donec arcu nisl, cursus non neque non, consequat ornare nunc.', 'assets/images/products/placeholder.png', 1, 100, 280, 1, NOW());
-INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('CLOTHES-1002', 'Spring & Summer Clothes', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin dui et dui euismod malesuada. Nunc hendrerit pulvinar tellus, posuere molestie libero volutpat quis. Donec arcu nisl, cursus non neque non, consequat ornare nunc.', 'assets/images/products/placeholder.png', 1, 100, 270, 1, NOW());
-INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('CLOTHES-1003', 'Dog Uniform Dress', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin dui et dui euismod malesuada. Nunc hendrerit pulvinar tellus, posuere molestie libero volutpat quis. Donec arcu nisl, cursus non neque non, consequat ornare nunc.', 'assets/images/products/placeholder.png', 1, 100, 178, 1, NOW());
-INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('CLOTHES-1004', 'Waffle Dress', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin dui et dui euismod malesuada. Nunc hendrerit pulvinar tellus, posuere molestie libero volutpat quis. Donec arcu nisl, cursus non neque non, consequat ornare nunc.', 'assets/images/products/placeholder.png', 1, 100, 110, 1, NOW());
-INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('CLOTHES-1005', 'Lace Tulle Dress', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin dui et dui euismod malesuada. Nunc hendrerit pulvinar tellus, posuere molestie libero volutpat quis. Donec arcu nisl, cursus non neque non, consequat ornare nunc.', 'assets/images/products/placeholder.png', 1, 100, 100, 1, NOW());
-INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('CLOTHES-1006', 'Summer Dress Fruit Design', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin dui et dui euismod malesuada. Nunc hendrerit pulvinar tellus, posuere molestie libero volutpat quis. Donec arcu nisl, cursus non neque non, consequat ornare nunc.', 'assets/images/products/placeholder.png', 1, 100, 109, 1, NOW());
-INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('CLOTHES-1007', 'Big Dog Sports Wear', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin dui et dui euismod malesuada. Nunc hendrerit pulvinar tellus, posuere molestie libero volutpat quis. Donec arcu nisl, cursus non neque non, consequat ornare nunc.', 'assets/images/products/placeholder.png', 1, 100, 119, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('SPECIALS-1000', 'Special Batangas Lomi', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin dui et dui euismod malesuada. Nunc hendrerit pulvinar tellus, posuere molestie libero volutpat quis. Donec arcu nisl, cursus non neque non, consequat ornare nunc.', 'assets/images/products/placeholder.png', 1, 100, 85, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('SPECIALS-1001', 'Chicken Lomi', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin dui et dui euismod malesuada. Nunc hendrerit pulvinar tellus, posuere molestie libero volutpat quis. Donec arcu nisl, cursus non neque non, consequat ornare nunc.', 'assets/images/products/placeholder.png', 1, 100, 100, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('SPECIALS-1002', 'Lechon Lomi', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin dui et dui euismod malesuada. Nunc hendrerit pulvinar tellus, posuere molestie libero volutpat quis. Donec arcu nisl, cursus non neque non, consequat ornare nunc.', 'assets/images/products/placeholder.png', 1, 100, 100, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('SPECIALS-1003', 'Miki Guisado', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin dui et dui euismod malesuada. Nunc hendrerit pulvinar tellus, posuere molestie libero volutpat quis. Donec arcu nisl, cursus non neque non, consequat ornare nunc.', 'assets/images/products/placeholder.png', 1, 100, 85, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('SPECIALS-1004', 'Chami (Tamis Anghang)', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin dui et dui euismod malesuada. Nunc hendrerit pulvinar tellus, posuere molestie libero volutpat quis. Donec arcu nisl, cursus non neque non, consequat ornare nunc.', 'assets/images/products/placeholder.png', 1, 100, 95, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('SPECIALS-1005', 'Canton Guisado w/ Lechon Kawali', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin dui et dui euismod malesuada. Nunc hendrerit pulvinar tellus, posuere molestie libero volutpat quis. Donec arcu nisl, cursus non neque non, consequat ornare nunc.', 'assets/images/products/placeholder.png', 1, 100, 140, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('SPECIALS-1006', 'Bihon Guisado w/ Lechon Kawali', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin dui et dui euismod malesuada. Nunc hendrerit pulvinar tellus, posuere molestie libero volutpat quis. Donec arcu nisl, cursus non neque non, consequat ornare nunc.', 'assets/images/products/placeholder.png', 1, 100, 140, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('SPECIALS-1007', 'Super Jumbo Overload - Batangas Lomi', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin dui et dui euismod malesuada. Nunc hendrerit pulvinar tellus, posuere molestie libero volutpat quis. Donec arcu nisl, cursus non neque non, consequat ornare nunc.', 'assets/images/products/placeholder.png', 1, 100, 230, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('SPECIALS-1008', 'Super Jumbo Overload - Miki Guisado', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin dui et dui euismod malesuada. Nunc hendrerit pulvinar tellus, posuere molestie libero volutpat quis. Donec arcu nisl, cursus non neque non, consequat ornare nunc.', 'assets/images/products/placeholder.png', 1, 100, 270, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('SPECIALS-1009', 'Super Jumbo Overload - Chami (Tamis Anghang', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin dui et dui euismod malesuada. Nunc hendrerit pulvinar tellus, posuere molestie libero volutpat quis. Donec arcu nisl, cursus non neque non, consequat ornare nunc.', 'assets/images/products/placeholder.png', 1, 100, 270, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('SPECIALS-1010', 'Pansit with Lecho Kawali in Bilao - Small (5-8 pax)', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin dui et dui euismod malesuada. Nunc hendrerit pulvinar tellus, posuere molestie libero volutpat quis. Donec arcu nisl, cursus non neque non, consequat ornare nunc.', 'assets/images/products/placeholder.png', 1, 100, 400, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('SPECIALS-1011', 'Pansit with Lecho Kawali in Bilao - Medium (10-12 pax)', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin dui et dui euismod malesuada. Nunc hendrerit pulvinar tellus, posuere molestie libero volutpat quis. Donec arcu nisl, cursus non neque non, consequat ornare nunc.', 'assets/images/products/placeholder.png', 1, 100, 550, 1, NOW());
+INSERT INTO product (sku, name, description, image_url, active, units_in_stock, unit_price, category_id,date_created) VALUES ('SPECIALS-1012', 'Pansit with Lecho Kawali in Bilao - Large (15-20 pax)', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin dui et dui euismod malesuada. Nunc hendrerit pulvinar tellus, posuere molestie libero volutpat quis. Donec arcu nisl, cursus non neque non, consequat ornare nunc.', 'assets/images/products/placeholder.png', 1, 100, 700, 1, NOW());
 
 
 -- -----------------------------------------------------

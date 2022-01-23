@@ -1,15 +1,15 @@
 -- -----------------------------------------------------
--- Schema full-stack-petsupply
+-- Schema full-stack-nikriks
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `full-stack-petsupply`;
+DROP SCHEMA IF EXISTS `full-stack-nikriks`;
 
-CREATE SCHEMA `full-stack-petsupply`;
-USE `full-stack-petsupply` ;
+CREATE SCHEMA `full-stack-nikriks`;
+USE `full-stack-nikriks` ;
 
 -- -----------------------------------------------------
--- Table `full-stack-petsupply`.`product_category`
+-- Table `full-stack-nikriks`.`product_category`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `full-stack-petsupply`.`product_category` (
+CREATE TABLE IF NOT EXISTS `full-stack-nikriks`.`product_category` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
   `category_name` VARCHAR(255) NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
@@ -17,9 +17,9 @@ ENGINE=InnoDB
 AUTO_INCREMENT = 1;
 
 -- -----------------------------------------------------
--- Table `full-stack-petsupply`.`product`
+-- Table `full-stack-nikriks`.`product`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `full-stack-petsupply`.`product` (
+CREATE TABLE IF NOT EXISTS `full-stack-nikriks`.`product` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
   `sku` VARCHAR(255) DEFAULT NULL,
   `name` VARCHAR(255) DEFAULT NULL,

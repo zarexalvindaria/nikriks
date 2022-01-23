@@ -1,4 +1,4 @@
-USE `full-stack-petsupply`;
+USE `full-stack-nikriks`;
 
 SET foreign_key_checks = 0;
 
