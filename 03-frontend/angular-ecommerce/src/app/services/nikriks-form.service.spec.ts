@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { PetfluencerzFormService } from './petfluencerz-form.service';
+import { PetfluencerzFormService } from './nikriks-form.service';
 
 describe('PetfluencerzFormService', () => {
   let service: PetfluencerzFormService;
