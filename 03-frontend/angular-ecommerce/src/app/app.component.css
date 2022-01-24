@@ -2,7 +2,7 @@
   height: responsive;
 }
 
-.header-desktop {
-  /* background-color: #ffea07; */
+.header-desktop,
+footer {
   background-color: #646464;
 }
