@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
@@ -5,7 +6,10 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root',
 })
 export class PetfluencerzFormService {
-  constructor() {}
+  private countriesUrl = 'http://localhost:8080/api/countries';
+  private regionsUrl = 'http://localhost:8080/api/regions';
+
+  constructor(private httpClient: HttpClient) {}
 
   getCreditCardMonths(startMonth: number): Observable<number[]> {
     let data: number[] = [];
