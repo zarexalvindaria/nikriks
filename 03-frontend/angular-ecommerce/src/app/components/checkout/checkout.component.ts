@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { PetfluencerzFormService } from 'src/app/services/petfluencerz-form.service';
+import { Country } from 'src/app/common/country';
+import { PetfluencerzFormService } from 'src/app/services/nikriks-form.service';
 
 @Component({
   selector: 'app-checkout',
@@ -14,6 +15,8 @@ export class CheckoutComponent implements OnInit {
 
   creditCardYears: number[] = [];
   creditCardMonths: number[] = [];
+
+  countries: Country[] = [];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -69,15 +72,22 @@ export class CheckoutComponent implements OnInit {
       console.log('Retrieved credit card years: ' + JSON.stringify(data));
       this.creditCardYears = data;
     });
+
+    // populate countries
+
+    this.petFluencerzFormService.getCountries().subscribe((data) => {
+      console.log('Retrieved countries:' + JSON.stringify(data));
+      this.countries = data;
+    });
   }
 
   copyShippingAddressToBillingAddress(event: any) {
     if (event.target.checked) {
-      this.checkoutFormGroup!.controls['billingAddress'].setValue(
-        this.checkoutFormGroup!.controls['shippingAddress'].value
+      this.checkoutFormGroup.controls['billingAddress'].setValue(
+        this.checkoutFormGroup.controls['shippingAddress'].value
       );
     } else {
-      this.checkoutFormGroup!.controls['billingAddress'].reset();
+      this.checkoutFormGroup.controls['billingAddress'].reset();
     }
   }
 
@@ -86,7 +96,7 @@ export class CheckoutComponent implements OnInit {
     console.log(this.checkoutFormGroup!.get('customer')!.value);
     console.log(
       'The email address is ' +
-        this.checkoutFormGroup!.get('customer')!.value.email
+        this.checkoutFormGroup.get('customer')!.value.email
     );
   }
 
