@@ -141,7 +141,13 @@ export class CheckoutComponent implements OnInit {
 
     this.petFluencerzFormService.getRegions(countryCode).subscribe((data) => {
       if (formGroupName === `shippingAddress`) {
+        this.shippingAddressRegions = data;
+      } else {
+        this.billingAddressRegions = data;
       }
+
+      // select first item by default
+      formGroup?.get('state')?.setValue(data[0]);
     });
   }
 }
