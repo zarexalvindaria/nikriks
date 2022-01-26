@@ -94,6 +94,9 @@ export class CheckoutComponent implements OnInit {
       this.billingAddressRegions = this.shippingAddressRegions;
     } else {
       this.checkoutFormGroup.controls['billingAddress'].reset();
+
+      // bug fix for regions
+      this.billingAddressRegions = [];
     }
   }
 
