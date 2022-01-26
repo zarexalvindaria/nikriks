@@ -73,7 +73,7 @@
             <div class="col-md-2"><label>Region</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <select formControlName="country">
+                <select formControlName="region">
                   <option *ngFor="let region of shippingAddressRegions" [ngValue]="region">
                     {{ region.name }}
                   </option>
@@ -140,7 +140,7 @@
             <div class="col-md-2"><label>Region</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <select formControlName="country">
+                <select formControlName="region">
                   <option *ngFor="let region of billingAddressRegions" [ngValue]="region">
                     {{ region.name }}
                   </option>

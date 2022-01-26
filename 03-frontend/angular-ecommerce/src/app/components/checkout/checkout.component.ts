@@ -37,14 +37,14 @@ export class CheckoutComponent implements OnInit {
       shippingAddress: this.formBuilder.group({
         street: [''],
         city: [''],
-        state: [''],
+        region: [''],
         country: [''],
         zipCode: [''],
       }),
       billingAddress: this.formBuilder.group({
         street: [''],
         city: [''],
-        state: [''],
+        region: [''],
         country: [''],
         zipCode: [''],
       }),
@@ -106,6 +106,7 @@ export class CheckoutComponent implements OnInit {
       'The shipping address country is ' +
         this.checkoutFormGroup.get('shippingAddress')!.value.country.name
     );
+
     console.log(
       'The shipping address region is ' +
         this.checkoutFormGroup.get('shippingAddress')!.value.region.name
@@ -144,8 +145,8 @@ export class CheckoutComponent implements OnInit {
     const countryCode = formGroup?.value.country.code;
     const countryName = formGroup?.value.country.name;
 
-    console.log(`{formGroupName} country code: ${countryCode}`);
-    console.log(`{formGroupName} country name: ${countryName}`);
+    console.log(`${formGroupName} country code: ${countryCode}`);
+    console.log(`${formGroupName} country name: ${countryName}`);
 
     this.petFluencerzFormService.getRegions(countryCode).subscribe((data) => {
       if (formGroupName === `shippingAddress`) {
@@ -155,7 +156,7 @@ export class CheckoutComponent implements OnInit {
       }
 
       // select first item by default
-      formGroup?.get('state')?.setValue(data[0]);
+      formGroup?.get('region')?.setValue(data[0]);
     });
   }
 }
