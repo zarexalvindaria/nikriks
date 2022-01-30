@@ -121,6 +121,16 @@
             <div class="col-md-9">
               <div class="input-space">
                 <input formControlName="city" type="text" />
+
+                <div
+                  *ngIf="shippingAddressCity?.invalid && (shippingAddressCity?.dirty || shippingAddressCity?.touched)"
+                  class="alert alert-danger mt-1">
+
+                  <div
+                    *ngIf="shippingAddressCity?.errors?.['required'] || shippingAddressCity?.errors?.['notOnlyWhitespace']">
+                    City is required
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -134,6 +144,15 @@
                     {{ region.name }}
                   </option>
                 </select>
+                <div
+                  *ngIf="shippingAddressRegion?.invalid && (shippingAddressRegion?.dirty || shippingAddressRegion?.touched)"
+                  class="alert alert-danger mt-1">
+
+                  <div
+                    *ngIf="shippingAddressRegion?.errors?.['required'] || shippingAddressRegion?.errors?.['notOnlyWhitespace']">
+                    Region is required
+                  </div>
+                </div>
               </div>
             </div>
           </div>
