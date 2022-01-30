@@ -111,6 +111,9 @@
                     *ngIf="shippingAddressStreet?.errors?.['required'] || shippingAddressStreet?.errors?.['notOnlyWhitespace']">
                     Street is required
                   </div>
+                  <div *ngIf="shippingAddressZipCode?.errors?.['minlength']">
+                    Street must be at least 2 characters long.
+                  </div>
                 </div>
               </div>
             </div>
@@ -129,6 +132,9 @@
                   <div
                     *ngIf="shippingAddressCity?.errors?.['required'] || shippingAddressCity?.errors?.['notOnlyWhitespace']">
                     City is required
+                  </div>
+                  <div *ngIf="shippingAddressZipCode?.errors?.['minlength']">
+                    City must be at least 2 characters long.
                   </div>
                 </div>
               </div>
@@ -170,6 +176,10 @@
                   <div
                     *ngIf="shippingAddressZipCode?.errors?.['required'] || shippingAddressZipCode?.errors?.['notOnlyWhitespace']">
                     Zip code is required
+                  </div>
+
+                  <div *ngIf="shippingAddressZipCode?.errors?.['minlength']">
+                    Zip code must be at least 2 characters long.
                   </div>
                 </div>
               </div>
@@ -226,6 +236,9 @@
                     *ngIf="billingAddressStreet?.errors?.['required'] || billingAddressStreet?.errors?.['notOnlyWhitespace']">
                     Street is required
                   </div>
+                  <div *ngIf="shippingAddressZipCode?.errors?.['minlength']">
+                    Street must be at least 2 characters long.
+                  </div>
                 </div>
               </div>
             </div>
@@ -243,6 +256,9 @@
                   <div
                     *ngIf="billingAddressCity?.errors?.['required'] || billingAddressCity?.errors?.['notOnlyWhitespace']">
                     City is required
+                  </div>
+                  <div *ngIf="shippingAddressZipCode?.errors?.['minlength']">
+                    City must be at least 2 characters long.
                   </div>
                 </div>
               </div>
@@ -286,6 +302,9 @@
                 <div
                   *ngIf="billingAddressZipCode?.errors?.['required'] || billingAddressZipCode?.errors?.['notOnlyWhitespace']">
                   Zip Code is required
+                </div>
+                <div *ngIf="shippingAddressZipCode?.errors?.['minlength']">
+                  Zip code must be at least 2 characters long.
                 </div>
               </div>
             </div>
