@@ -258,6 +258,16 @@
                     {{ region.name }}
                   </option>
                 </select>
+
+                <div
+                  *ngIf="billingAddressRegion?.invalid && (billingAddressRegion?.dirty || billingAddressRegion?.touched)"
+                  class="alert alert-danger mt-1">
+
+                  <div
+                    *ngIf="billingAddressRegion?.errors?.['required'] || billingAddressRegion?.errors?.['notOnlyWhitespace']">
+                    Region is required
+                  </div>
+                </div>
               </div>
             </div>
           </div>
