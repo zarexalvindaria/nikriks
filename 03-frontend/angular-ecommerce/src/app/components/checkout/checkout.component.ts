@@ -71,11 +71,23 @@ export class CheckoutComponent implements OnInit {
         ]),
       }),
       billingAddress: this.formBuilder.group({
-        street: [''],
-        city: [''],
-        region: [''],
-        country: [''],
-        zipCode: [''],
+        street: new FormControl('', [
+          Validators.required,
+          Validators.minLength(2),
+          NikriksValidators.notOnlyWhitespace,
+        ]),
+        city: new FormControl('', [
+          Validators.required,
+          Validators.minLength(2),
+          NikriksValidators.notOnlyWhitespace,
+        ]),
+        region: new FormControl('', [Validators.required]),
+        country: new FormControl('', [Validators.required]),
+        zipCode: new FormControl('', [
+          Validators.required,
+          Validators.minLength(2),
+          NikriksValidators.notOnlyWhitespace,
+        ]),
       }),
       creditCard: this.formBuilder.group({
         cardType: [''],
