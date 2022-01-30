@@ -347,7 +347,10 @@
 
                   <div
                     *ngIf="creditCardNameOnCard?.errors?.['required'] || creditCardNameOnCard?.errors?.['notOnlyWhitespace']">
-                    Credit card type is required
+                    Name is required
+                  </div>
+                  <div *ngIf="creditCardNameOnCard?.errors?.['minlength']">
+                    Name must be at least 2 characters long.
                   </div>
                 </div>
               </div>
