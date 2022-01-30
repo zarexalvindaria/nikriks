@@ -8,6 +8,7 @@ import {
 import { Country } from 'src/app/common/country';
 import { Region } from 'src/app/common/region';
 import { PetfluencerzFormService } from 'src/app/services/nikriks-form.service';
+import { NikriksValidators } from 'src/app/validators/nikriks-validators';
 
 @Component({
   selector: 'app-checkout',
@@ -38,6 +39,7 @@ export class CheckoutComponent implements OnInit {
         firstName: new FormControl('', [
           Validators.required,
           Validators.minLength(2),
+          NikriksValidators.notOnlyWhitespace,
         ]),
         lastName: new FormControl('', [
           Validators.required,
