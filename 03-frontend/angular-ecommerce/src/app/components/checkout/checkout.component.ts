@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { Country } from 'src/app/common/country';
 import { Region } from 'src/app/common/region';
+import { CartService } from 'src/app/services/cart.service';
 import { PetfluencerzFormService } from 'src/app/services/nikriks-form.service';
 import { NikriksValidators } from 'src/app/validators/nikriks-validators';
 
@@ -30,7 +31,8 @@ export class CheckoutComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private petFluencerzFormService: PetfluencerzFormService
+    private petFluencerzFormService: PetfluencerzFormService,
+    private cartService: CartService
   ) {}
 
   ngOnInit(): void {
