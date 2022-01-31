@@ -58,7 +58,7 @@ public class CheckoutServiceImpl implements CheckoutService {
 
         // generate a random UUID number (UUID version-4)
         // For details see: https://en.wikipedia.org/wiki/Universally_unique_identifier
-        
+
         return UUID.randomUUID().toString();
     }
 }
