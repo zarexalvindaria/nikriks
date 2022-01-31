@@ -7,33 +7,27 @@
    "shippingAddress":{
       "street":"afasa",
       "city":"afasa",
-      "state":"Alberta",
-      "country":"Canada",
-      "zipCode":"afasa"
+      "region":"Region I (Ilocos Region)",
+      "country":"Philippines",
+      "zipCode":"19111"
    },
    "billingAddress":{
       "street":"fsfsf",
       "city":"sfdsf",
-      "state":"Acre",
-      "country":"Brazil",
+      "region":"Region I (Ilocos Region)",
+      "country":"Philippines",
       "zipCode":"19111"
    },
    "order":{
-      "totalPrice":36.98,
+      "totalPrice":170,
       "totalQuantity":2
    },
    "orderItems":[
       {
-         "imageUrl":"assets/images/products/coffeemugs/coffeemug-luv2code-1000.png",
-         "quantity":1,
-         "unitPrice":18.99,
-         "productId":26
-      },
-      {
-         "imageUrl":"assets/images/products/mousepads/mousepad-luv2code-1000.png",
-         "quantity":1,
-         "unitPrice":17.99,
-         "productId":51
+         "imageUrl":"assets/images/products/placeholder.png",
+         "quantity":2,
+         "unitPrice":85,
+         "productId":1
       }
    ]
 }
