@@ -19,6 +19,9 @@ public class Address {
     @Column(name="street")
     private String street;
 
+    @Column(name="city")
+    private String city;
+
     @Column(name="region")
     private String region;
 
