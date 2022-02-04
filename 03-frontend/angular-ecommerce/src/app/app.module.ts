@@ -1,8 +1,5 @@
-import {
-  NgModule,
-  ɵclearResolutionOfComponentResourcesQueue,
-} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
@@ -30,14 +27,17 @@ import {
 
 import myAppConfig from './config/my-app-config';
 
-const oktaConfig = Object.assign({
-  onAuthRequired: (injector: { get: (arg0: any) => any }) => {
-    const router = injector.get(Router);
+const oktaConfig = Object.assign(
+  {
+    onAuthRequired: (injector: { get: (arg0: typeof Router) => any }) => {
+      const router = injector.get(Router);
 
-    // Redirect the user to your custom login page
-    router.navigate(['login']);
+      // Redirect the user to your custom login page
+      router.navigate(['/login']);
+    },
   },
-});
+  myAppConfig.oidc
+);
 
 const routes: Routes = [
   { path: 'login/callback', component: OktaCallbackComponent },
@@ -47,7 +47,7 @@ const routes: Routes = [
   { path: 'cart-details', component: CartDetailsComponent },
   { path: 'products/:id', component: ProductDetailsComponent },
   { path: 'search/:keyword', component: ProductListComponent },
-  { path: 'category/:id/:name', component: ProductListComponent },
+  { path: 'category/:id', component: ProductListComponent },
   { path: 'category', component: ProductListComponent },
   { path: 'products', component: ProductListComponent },
   { path: '', redirectTo: '/products', pathMatch: 'full' },
