@@ -27,4 +27,4 @@
 `docker pull zarexalvindaria/nikriksapp-frontend:latest`
 
 ### Run the Docker image at port 4200
-`docker run --name nikriksapp-db -p 4200:4200 -d zarexalvindaria/nikriksapp-frontend:latest`
+`docker run --name nikriksapp-frontend -p 4200:80 -d nikriksapp-frontend:latest`
