@@ -46,3 +46,7 @@ To be added..
 2. __Run the Docker image at port 4200__
 
    `docker run --name nikriksapp-frontend -p 4200:80 -d nikriksapp-frontend:latest`
+
+
+
+The application can now be accessed at http://localhost:4200.
