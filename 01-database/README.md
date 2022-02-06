@@ -8,7 +8,7 @@
 
 ### 1. Create the Nikrik's Network
 
-`docker network create --subnet=172.18.0.0/16 nikriks-network`
+`docker network create --subnet=172.18.0.0/16 nikriks`
 
 __Note: __ Creating the Nikrik's network is required in order for the database and backend to connect.
 
@@ -17,7 +17,7 @@ __Note: __ Creating the Nikrik's network is required in order for the database a
 `docker build -t nikriksapp-db:latest .`
 
 ### 3. Run the image under the nikriks-network at port 3310
-`docker run --name nikriksapp-db --network nikriks-network --ip 172.18.0.2 -p 3310:3306 -d nikriksapp-db:latest`
+`docker run --name nikriksapp-db --network nikriks --ip 172.18.0.2 -p 3310:3306 -d nikriksapp-db:latest`
 
 ### 5. Add tag to image
 `docker tag nikriksapp-db zarexalvindaria/nikriksapp-db:latest`
@@ -33,7 +33,7 @@ __Note: __ Creating the Nikrik's network is required in order for the database a
 
 ### 1. Create the Nikrik's Network
 
-`docker network create --subnet=172.18.0.0/16 nikriks-network`
+`docker network create --subnet=172.18.0.0/16 nikriks`
 
 __Note: __ Creating the Nikrik's network is required in order for the database and backend to connect.
 
@@ -41,4 +41,4 @@ __Note: __ Creating the Nikrik's network is required in order for the database a
 `docker pull zarexalvindaria/nikriksapp-db:latest`
 
 ### 3. Run the image under the nikriks-network at port 3310
-`docker run --name nikriksapp-db --network nikriks-network --ip 172.18.0.2 -p 3310:3306 -d nikriksapp-db:latest`
+`docker run --name nikriksapp-db --network nikriks --ip 172.18.0.2 -p 3310:3306 -d nikriksapp-db:latest`
