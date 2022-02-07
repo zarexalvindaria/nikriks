@@ -4,7 +4,7 @@
 
 ## Instructions for Developer
 
-**Note:** Before running any of the commands below, make sure that you have [Docker](https://www.docker.com/products/docker-desktop) installed and it is running in the background.
+**Note:** Before running any of the commands below, make sure that you have [Docker](https://www.docker.com/products/docker-desktop) installed and is running in the background.
 
 
 
@@ -18,7 +18,7 @@
 
 __Note: __ Creating the Nikrik's network is required in order for the database and backend to connect. But if this is only for pushing to DockerHub, creating the network is not needed.
 
-### 3. Run the image under the nikriks-network at port 3310
+### 3. Run the image under the nikriks network at port 3310
 `docker run --name nikriksapp-db --network nikriks --ip 172.18.0.2 -p 3310:3306 -d nikriksapp-db:latest`
 
 ### 5. Add tag to image
@@ -42,5 +42,5 @@ __Note: __ Creating the Nikrik's network is required in order for the database a
 ### 2. Pull the MySQL image from DockerHub
 `docker pull zarexalvindaria/nikriksapp-db:latest`
 
-### 3. Run the image under the nikriks-network at port 3310
-`docker run --name nikriksapp-db --network nikriks --ip 172.18.0.2 -p 3310:3306 -d nikriksapp-db:latest`
+### 3. Run the image under the nikriks network at port 3310
+`docker run --name nikriksapp-db --network nikriks --ip 172.18.0.2 -p 3310:3306 -d zarexalvindaria/nikriksapp-db:latest`
