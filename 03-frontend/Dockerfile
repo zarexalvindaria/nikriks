@@ -7,7 +7,7 @@ FROM node:latest as build
 WORKDIR /app
 
 # Add the source code to app
-COPY . .
+COPY angular-ecommerce .
 
 # Install all the dependencies
 RUN npm install
@@ -23,6 +23,7 @@ FROM nginx:latest
 
 # Copy the build output to replace the default nginx contents.
 COPY --from=build /app/dist/angular-ecommerce /usr/share/nginx/html
+COPY /nginx.conf  /etc/nginx/conf.d/default.conf
 
-# Expose port 4201
+# Expose port 80
 EXPOSE 80

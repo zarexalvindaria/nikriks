@@ -6,7 +6,7 @@
 
 
 ###  Build the frontend image
-`docker build -t nikriksapp-frontend:latest angular-ecommerce`
+`docker build -t nikriksapp-frontend:latest .`
 
 ### Run the image at port 4200
 `docker run --name nikriksapp-frontend -p 4200:80 -d nikriksapp-frontend:latest`
@@ -27,4 +27,4 @@
 `docker pull zarexalvindaria/nikriksapp-frontend:latest`
 
 ### Run the Docker image at port 4200
-`docker run --name nikriksapp-frontend -p 4200:80 -d nikriksapp-frontend:latest`
+`docker run --name nikriksapp-frontend -p 4200:80 -d zarexalvindaria/nikriksapp-frontend:latest`
