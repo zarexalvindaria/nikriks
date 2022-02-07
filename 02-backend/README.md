@@ -4,7 +4,7 @@
 
 ## Instructions for Developer
 
-**Note:** Before running any of the commands below, make sure that you have [Docker](https://www.docker.com/products/docker-desktop) installed and it is running in the background.
+**Note:** Before running any of the commands below, make sure that you have [Docker](https://www.docker.com/products/docker-desktop) installed and is running in the background.
 
 ### 1. If you have not created the Nikrik's Network yet from the [database instructions](https://github.com/zarexalvindaria/nikriks/tree/main/01-database), create the network 
 
@@ -14,11 +14,11 @@
 ###  2. Build the backend image
 `docker build -t nikriksapp-backend:latest .`
 
-### 3. __Run the image under the nikriks-network specifying its ip address and port at 172.18.0.3: 8080__
+### 3. __Run the image under the nikriks network specifying its ip address and port at 172.18.0.3: 8080__
 `docker run --name nikriksapp-backend --network nikriks --ip 172.18.0.3 -p 8080:8080 -d nikriksapp-backend:latest`
 
 ### 4. Add tag to image
-`docker tag nikriksapp-frontend zarexalvindaria/nikriksapp-backend:latest`
+`docker tag nikriksapp-backend zarexalvindaria/nikriksapp-backend:latest`
 
 ### 5. Push image to DockerHub
 `docker push zarexalvindaria/nikriksapp-backend:latest`
@@ -37,4 +37,4 @@
 `docker pull zarexalvindaria/nikriksapp-backend:latest `
 
 ### 3. __Run the image under the nikriks-network specifying its ip address and port at 172.18.0.3: 8080__
-`docker run --name nikriksapp-backend -d nikriksapp-backend:latest`
+`docker run --name nikriksapp-backend --network nikriks --ip 172.18.0.3 -p 8080:8080 -d zarexalvindaria/nikriksapp-backend:latest`
