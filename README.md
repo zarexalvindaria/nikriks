@@ -28,7 +28,7 @@ To be added..
 
    `docker pull zarexalvindaria/nikriksapp-db:latest`
 
-2. __Run the image under the nikriks-network at port 3310__
+2. __Run the image under the nikriks network at port 3310__
 
    `docker run --name nikriksapp-db --network nikriks --ip 172.18.0.2 -p 3310:3306 -d zarexalvindaria/nikriksapp-db:latest`
 
@@ -39,7 +39,7 @@ To be added..
 
    `docker pull zarexalvindaria/nikriksapp-backend:latest`
 
-2. __Run the image under the nikriks-network specifying its ip address and port at 172.18.0.3: 8080__
+2. __Run the image under the nikriks network specifying its ip address and port at 172.18.0.3: 8080__
    
    `docker run --name nikriksapp-backend --network nikriks --ip 172.18.0.3 -p 8080:8080 -d zarexalvindaria/nikriksapp-backend:latest`
 
