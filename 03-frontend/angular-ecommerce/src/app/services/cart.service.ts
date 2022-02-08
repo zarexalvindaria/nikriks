@@ -14,8 +14,9 @@ export class CartService {
   storage: Storage = sessionStorage;
 
   constructor() {
-    // read date from storage
-    let data = JSON.parse(this.storage.getItem('cartItems') || '{}');
+    // read data from storage
+
+    let data = JSON.parse(this.storage.getItem('cartItems')!);
 
     if (data != null) {
       this.cartItems = data;
@@ -66,6 +67,9 @@ export class CartService {
 
     // log cart data just for debugging purposes
     this.logCartData(totalPriceValue, totalQuantityValue);
+
+    // persist cart data
+    this.persistentCartItems();
   }
 
   persistentCartItems() {
