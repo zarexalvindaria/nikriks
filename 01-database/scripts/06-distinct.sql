@@ -1,4 +1,4 @@
-USE `full-stack-ecommerce`;
+USE `full-stack-nikriks`;
 
 -- clean up previous database TABLESPACE
 
@@ -11,6 +11,6 @@ TRUNCATE address;
 
 SET FOREIGN_KEY_CHECKS=1;
 
---Step 2: make the email address UNIQUE
+-- Step 2: make the email address UNIQUE
 
-ALTER TABLE customer ADD UNIQUE (email);
+ALTER TABLE customer ADD UNIQUE(email);
