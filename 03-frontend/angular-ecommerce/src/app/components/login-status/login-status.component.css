@@ -47,3 +47,12 @@
   -moz-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
+
+.login-status-user-info {
+  color: #fff;
+}
+
+button {
+  border: #b4a340 !important;
+  background: #b4a340 !important;
+}
