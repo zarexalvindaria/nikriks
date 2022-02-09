@@ -34,6 +34,8 @@ export class CheckoutComponent implements OnInit {
   shippingAddressRegions: Region[] = [];
   billingAddressRegions: Region[] = [];
 
+  storage: Storage = sessionStorage;
+
   constructor(
     private formBuilder: FormBuilder,
     private petFluencerzFormService: PetfluencerzFormService,
@@ -41,6 +43,9 @@ export class CheckoutComponent implements OnInit {
     private checkoutService: CheckoutService,
     private router: Router
   ) {}
+
+  // read the user's email address from browser storage
+  theEmail = JSON.parse(this.storage.getItem('userEmail')!);
 
   ngOnInit(): void {
     this.reviewCartDetails();
@@ -57,7 +62,7 @@ export class CheckoutComponent implements OnInit {
           Validators.minLength(2),
           NikriksValidators.notOnlyWhitespace,
         ]),
-        email: new FormControl('', [
+        email: new FormControl(this.theEmail, [
           Validators.required,
           Validators.pattern('^[a-z0-9._%+]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
         ]),
