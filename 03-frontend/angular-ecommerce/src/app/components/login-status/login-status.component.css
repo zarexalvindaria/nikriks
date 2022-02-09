@@ -52,7 +52,8 @@
   color: #fff;
 }
 
-button {
-  border: #b4a340 !important;
-  background: #b4a340 !important;
+.security-btn {
+  border: 5px solid #b4a340;
+  background: #b4a340;
+  margin: 5px;
 }
