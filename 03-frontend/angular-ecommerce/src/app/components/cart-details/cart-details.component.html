@@ -11,11 +11,7 @@
 
           <tr *ngFor="let tempCartItem of cartItems">
             <td>
-              <img
-                src="{{ tempCartItem.imageUrl }}"
-                class="img-responsive"
-                width="150px"
-              />
+              <img src="{{ tempCartItem.imageUrl }}" class="img-responsive" width="150px" />
             </td>
             <td>
               <p>{{ tempCartItem.name }}</p>
@@ -26,10 +22,7 @@
                 <label>Quantity:</label>
                 <div class="row" no-gutters>
                   <div class="col">
-                    <button
-                      (click)="incrementQuantity(tempCartItem)"
-                      class="btn btn-primary btn-sm"
-                    >
+                    <button (click)="incrementQuantity(tempCartItem)" class="btn btn-primary btn-sm">
                       <i class="fas fa-plus"></i>
                     </button>
                   </div>
@@ -39,10 +32,7 @@
                   </div>
 
                   <div class="col">
-                    <button
-                      (click)="decrementQuantity(tempCartItem)"
-                      class="btn btn-primary btn-sm"
-                    >
+                    <button (click)="decrementQuantity(tempCartItem)" class="btn btn-primary btn-sm">
                       <i class="fas fa-minus"></i>
                     </button>
                   </div>
@@ -51,18 +41,15 @@
               </div>
 
               <div>
-                <button
-                  (click)="remove(tempCartItem)"
-                  class="btn btn-primary btn-sm"
-                >
+                <button (click)="remove(tempCartItem)" class="btn btn-primary btn-sm">
                   Remove
                 </button>
               </div>
               <p class="mt-2">
                 Subtotal:
                 {{
-                  tempCartItem.quantity * tempCartItem.unitPrice
-                    | currency: "PHP"
+                tempCartItem.quantity * tempCartItem.unitPrice
+                | currency: "PHP"
                 }}
               </p>
             </td>
@@ -72,7 +59,7 @@
             <td colspan="2"></td>
             <td style="font-weight: bold">
               <p>Total Quantity: {{ totalQuantity }}</p>
-              <p>Shipping: FREE</p>
+              <!--p>Shipping: FREE</p-->
               <p>Total Price: {{ totalPrice | currency: "PHP" }}</p>
               <div>
                 <a routerLink="/checkout" class="btn btn-primary">Checkout</a>
@@ -82,11 +69,7 @@
         </table>
       </div>
 
-      <div
-        *ngIf="cartItems.length == 0"
-        class="alert alert-warning col-md-12"
-        role="aleart"
-      >
+      <div *ngIf="cartItems.length == 0" class="alert alert-warning col-md-12" role="aleart">
         Your shopping cart is empty.
       </div>
     </div>
