@@ -8,7 +8,7 @@ import { Region } from '../common/region';
 @Injectable({
   providedIn: 'root',
 })
-export class PetfluencerzFormService {
+export class NikriksFormService {
   private countriesUrl = 'http://localhost:8080/api/countries';
   private regionsUrl = 'http://localhost:8080/api/regions';
 

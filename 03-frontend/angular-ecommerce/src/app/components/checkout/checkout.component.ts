@@ -13,7 +13,7 @@ import { Purchase } from 'src/app/common/purchase';
 import { Region } from 'src/app/common/region';
 import { CartService } from 'src/app/services/cart.service';
 import { CheckoutService } from 'src/app/services/checkout.service';
-import { PetfluencerzFormService } from 'src/app/services/nikriks-form.service';
+import { NikriksFormService } from 'src/app/services/nikriks-form.service';
 import { NikriksValidators } from 'src/app/validators/nikriks-validators';
 
 @Component({
@@ -38,7 +38,7 @@ export class CheckoutComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private petFluencerzFormService: PetfluencerzFormService,
+    private nikriksFormService: NikriksFormService,
     private cartService: CartService,
     private checkoutService: CheckoutService,
     private router: Router
@@ -130,7 +130,7 @@ export class CheckoutComponent implements OnInit {
     const startMonth: number = new Date().getMonth() + 1;
     console.log('startMonth: ' + startMonth);
 
-    this.petFluencerzFormService
+    this.nikriksFormService
       .getCreditCardMonths(startMonth)
       .subscribe((data) => {
         console.log('Retrieved credit card months: ' + JSON.stringify(data));
@@ -139,14 +139,14 @@ export class CheckoutComponent implements OnInit {
 
     // populate credit card years
 
-    this.petFluencerzFormService.getCreditCardYears().subscribe((data) => {
+    this.nikriksFormService.getCreditCardYears().subscribe((data) => {
       console.log('Retrieved credit card years: ' + JSON.stringify(data));
       this.creditCardYears = data;
     });
 
     // populate countries
 
-    this.petFluencerzFormService.getCountries().subscribe((data) => {
+    this.nikriksFormService.getCountries().subscribe((data) => {
       console.log('Retrieved countries:' + JSON.stringify(data));
       this.countries = data;
     });
@@ -358,7 +358,7 @@ export class CheckoutComponent implements OnInit {
       startMonth = 1;
     }
 
-    this.petFluencerzFormService
+    this.nikriksFormService
       .getCreditCardMonths(startMonth)
       .subscribe((data) => {
         console.log('Retrieved credit card months: ' + JSON.stringify(data));
@@ -375,7 +375,7 @@ export class CheckoutComponent implements OnInit {
     console.log(`${formGroupName} country code: ${countryCode}`);
     console.log(`${formGroupName} country name: ${countryName}`);
 
-    this.petFluencerzFormService.getRegions(countryCode).subscribe((data) => {
+    this.nikriksFormService.getRegions(countryCode).subscribe((data) => {
       if (formGroupName === `shippingAddress`) {
         this.shippingAddressRegions = data;
       } else {
