@@ -1,26 +1,32 @@
 package com.softdev.ecommerce.service;
 
 import com.softdev.ecommerce.dao.CustomerRepository;
+import com.softdev.ecommerce.dto.PaymentInfo;
 import com.softdev.ecommerce.dto.Purchase;
 import com.softdev.ecommerce.dto.PurchaseResponse;
 import com.softdev.ecommerce.entity.Customer;
 import com.softdev.ecommerce.entity.Order;
 import com.softdev.ecommerce.entity.OrderItem;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.stripe.Stripe;
+import com.stripe.exception.StripeException;
+import com.stripe.model.PaymentIntent;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 public class CheckoutServiceImpl implements CheckoutService {
 
     private CustomerRepository customerRepository;
 
-    @Autowired
-    public CheckoutServiceImpl(CustomerRepository customerRepository) {
+    public CheckoutServiceImpl(CustomerRepository customerRepository,
+                               @Value("${stripe.key.secret}") String secretKey) {
         this.customerRepository = customerRepository;
+
+        // initialize Stripe API with secret key
+        Stripe.apiKey = secretKey;
     }
 
     @Override
@@ -63,6 +69,18 @@ public class CheckoutServiceImpl implements CheckoutService {
         // return a response
         return new PurchaseResponse(orderTrackingNumber);
 
+    }
+
+    @Override
+    public PaymentIntent createPaymentIntent(PaymentInfo paymentInfo) throws StripeException {
+        List<String> paymentMethodTypes = new ArrayList<>();
+        paymentMethodTypes.add("card");
+
+        Map<String, Object> params = new HashMap<>();
+        params.put("amount", paymentInfo.getAmount());
+        params.put("currency", paymentInfo.getCurrency());
+        params.put("payment_method_types", paymentMethodTypes);
+        return null;
     }
 
     private String generateOrderTrackingNumber() {
