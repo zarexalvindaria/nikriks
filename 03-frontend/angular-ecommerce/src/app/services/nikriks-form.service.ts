@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { Country } from '../common/country';
 import { Region } from '../common/region';
 
@@ -9,8 +10,8 @@ import { Region } from '../common/region';
   providedIn: 'root',
 })
 export class NikriksFormService {
-  private countriesUrl = 'http://localhost:8080/api/countries';
-  private regionsUrl = 'http://localhost:8080/api/regions';
+  private countriesUrl = environment.nikriksApiUrl + '/countries';
+  private regionsUrl = environment.nikriksApiUrl + '/regions';
 
   constructor(private httpClient: HttpClient) {}
 
