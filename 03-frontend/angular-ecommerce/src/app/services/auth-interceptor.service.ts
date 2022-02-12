@@ -6,7 +6,6 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { OktaAuthService } from '@okta/okta-angular';
-import { request } from 'http';
 import { from, lastValueFrom, Observable } from 'rxjs';
 
 @Injectable({
@@ -14,17 +13,19 @@ import { from, lastValueFrom, Observable } from 'rxjs';
 })
 export class AuthInterceptorService implements HttpInterceptor {
   constructor(private oktaAuth: OktaAuthService) {}
+
   intercept(
     request: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     return from(this.handleAccess(request, next));
   }
+
   private async handleAccess(
     request: HttpRequest<any>,
     next: HttpHandler
   ): Promise<HttpEvent<any>> {
-    // Only ad an access token for secured endpoints
+    // Only add an access token for secured endpoints
     const securedEndpoints = ['http://localhost:8080/api/orders'];
 
     if (securedEndpoints.some((url) => request.urlWithParams.includes(url))) {
@@ -34,7 +35,7 @@ export class AuthInterceptorService implements HttpInterceptor {
       // clone the request and add new header with access token
       request = request.clone({
         setHeaders: {
-          Authorization: 'Bearer' + accessToken,
+          Authorization: 'Bearer ' + accessToken,
         },
       });
     }
