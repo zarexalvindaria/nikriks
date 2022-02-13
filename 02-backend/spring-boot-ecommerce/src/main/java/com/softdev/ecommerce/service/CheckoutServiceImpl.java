@@ -23,6 +23,7 @@ public class CheckoutServiceImpl implements CheckoutService {
 
     public CheckoutServiceImpl(CustomerRepository customerRepository,
                                @Value("${stripe.key.secret}") String secretKey) {
+
         this.customerRepository = customerRepository;
 
         // initialize Stripe API with secret key
@@ -45,7 +46,7 @@ public class CheckoutServiceImpl implements CheckoutService {
         orderItems.forEach(item -> order.add(item));
 
         // populate order with billingAddress and shippingAddress
-        order.setBillingAddress((purchase.getBillingAddress()));
+        order.setBillingAddress(purchase.getBillingAddress());
         order.setShippingAddress(purchase.getShippingAddress());
 
         // populate customer with order
@@ -68,11 +69,11 @@ public class CheckoutServiceImpl implements CheckoutService {
 
         // return a response
         return new PurchaseResponse(orderTrackingNumber);
-
     }
 
     @Override
     public PaymentIntent createPaymentIntent(PaymentInfo paymentInfo) throws StripeException {
+
         List<String> paymentMethodTypes = new ArrayList<>();
         paymentMethodTypes.add("card");
 
@@ -80,14 +81,15 @@ public class CheckoutServiceImpl implements CheckoutService {
         params.put("amount", paymentInfo.getAmount());
         params.put("currency", paymentInfo.getCurrency());
         params.put("payment_method_types", paymentMethodTypes);
-        return null;
+
+        return PaymentIntent.create(params);
     }
 
     private String generateOrderTrackingNumber() {
 
         // generate a random UUID number (UUID version-4)
         // For details see: https://en.wikipedia.org/wiki/Universally_unique_identifier
-
+        //
         return UUID.randomUUID().toString();
     }
 }
