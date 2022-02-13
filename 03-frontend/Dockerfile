@@ -7,7 +7,7 @@ FROM node:latest as build
 WORKDIR /app
 
 # Add the source code to app
-COPY angular-nikriks .
+COPY ./angular-nikriks/. .
 
 # Install all the dependencies
 RUN npm install
@@ -21,8 +21,12 @@ RUN npm run build --prod
 # Use official nginx image as the base image
 FROM nginx:latest
 
+# Copy SSL Certificate
+COPY ./angular-nikriks/ssl-localhost/localhost.crt /etc/nginx/conf.d/localhost.crt
+COPY ./angular-nikriks/ssl-localhost/localhost.key /etc/nginx/conf.d/localhost.key
+
 # Copy the build output to replace the default nginx contents.
-COPY --from=build /app/dist/angular-ecommerce /usr/share/nginx/html
+COPY --from=build /app/dist/angular-nikriks /usr/share/nginx/html
 COPY /nginx.conf  /etc/nginx/conf.d/default.conf
 
 # Expose port 80

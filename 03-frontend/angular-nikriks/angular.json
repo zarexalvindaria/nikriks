@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-ecommerce": {
+    "angular-nikriks": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-ecommerce",
+            "outputPath": "dist/angular-nikriks",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -79,13 +79,13 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-ecommerce:build:production"
+              "browserTarget": "angular-nikriks:build:production"
             },
             "development": {
-              "browserTarget": "angular-ecommerce:build:development"
+              "browserTarget": "angular-nikriks:build:development"
             },
             "qa": {
-              "browserTarget": "angular-ecommerce:build:qa"
+              "browserTarget": "angular-nikriks:build:qa"
             }
           },
           "defaultConfiguration": "development"
@@ -93,7 +93,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-ecommerce:build"
+            "browserTarget": "angular-nikriks:build"
           }
         },
         "test": {
@@ -116,5 +116,5 @@
       }
     }
   },
-  "defaultProject": "angular-ecommerce"
+  "defaultProject": "angular-nikriks"
 }
