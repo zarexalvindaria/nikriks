@@ -6,7 +6,7 @@
 
 **Note:** Before running any of the commands below, make sure that you have [Docker](https://www.docker.com/products/docker-desktop) installed and is running in the background.
 
-### 1. If you have not created the Nikrik's Network yet from the [database instructions](https://github.com/zarexalvindaria/nikriks/tree/main/01-database), create the network 
+### 1. If you have not created the NikRik's network yet from the [database instructions](https://github.com/zarexalvindaria/nikriks/tree/main/01-database), create the network 
 
 `docker network create --subnet=172.18.0.0/16 nikriks`
 

@@ -14,7 +14,7 @@ To be added..
 
 2. Make sure Docker is running.
 
-3. Create the network bridge named `nikriks` for the database and Spring boot backend application.
+3. Open __command prompt/Powershell__ or __Git Bash__ to create the network bridge named `nikriks` for the database and Spring boot backend application.
 
    `docker network create --subnet=172.18.0.0/16 nikriks`
 
@@ -39,9 +39,9 @@ To be added..
 
    `docker pull zarexalvindaria/nikriksapp-backend:latest`
 
-2. __Run the image under the nikriks network specifying its ip address and port at 172.18.0.3: 8080__
+2. __Run the image under the nikriks network specifying its ip address and port at 172.18.0.3: 8443__
    
-   `docker run --name nikriksapp-backend --network nikriks --ip 172.18.0.3 -p 8080:8080 -d zarexalvindaria/nikriksapp-backend:latest`
+   `docker run --name nikriksapp-backend --network nikriks --ip 172.18.0.3 -p 8443:8443 -d zarexalvindaria/nikriksapp-backend:latest`
 
 
 ###  C. Frontend
@@ -56,4 +56,4 @@ To be added..
 
 
 
-The application can now be accessed at http://localhost:4200.
+The application can now be accessed at https://localhost:4200.
