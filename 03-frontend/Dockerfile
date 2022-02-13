@@ -7,7 +7,7 @@ FROM node:latest as build
 WORKDIR /app
 
 # Add the source code to app
-COPY angular-ecommerce .
+COPY angular-nikriks .
 
 # Install all the dependencies
 RUN npm install

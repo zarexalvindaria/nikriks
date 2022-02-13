@@ -2,7 +2,7 @@
 FROM openjdk:latest
 
 # Add the jar file and save it as app.jar
-ADD spring-boot-ecommerce/target/spring-boot-ecommerce-0.0.1-SNAPSHOT.jar app.jar
+ADD spring-boot-ecommerce/target/spring-boot-nikriks-0.0.1-SNAPSHOT.jar app.jar
 
 # Set the application's entry point and file to run
 ENTRYPOINT ["java", "-jar", "/app.jar"]
