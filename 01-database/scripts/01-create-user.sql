@@ -1,6 +1,6 @@
-CREATE USER 'nikriksapp'@'172.17.0.1' IDENTIFIED BY 'nikriksapp';
+CREATE USER 'nikriksapp'@'172.18.0.3' IDENTIFIED BY 'nikriksapp';
 
-GRANT ALL PRIVILEGES ON * . * TO 'nikriksapp'@'172.17.0.1' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON * . * TO 'nikriksapp'@'172.18.0.3' WITH GRANT OPTION;
 
 #
 # Starting with MySQL 8.0.4, the MySQL team changed the 
@@ -12,4 +12,4 @@ GRANT ALL PRIVILEGES ON * . * TO 'nikriksapp'@'172.17.0.1' WITH GRANT OPTION;
 # See the MySQL Reference Manual for details: 
 # https://dev.mysql.com/doc/refman/8.0/en/caching-sha2-pluggable-authentication.html
 #
-ALTER USER 'nikriksapp'@'172.17.0.1' IDENTIFIED WITH mysql_native_password BY 'gaj3LpyMNzJFg9%';
+ALTER USER 'nikriksapp'@'172.18.0.3' IDENTIFIED WITH mysql_native_password BY 'gaj3LpyMNzJFg9%';
