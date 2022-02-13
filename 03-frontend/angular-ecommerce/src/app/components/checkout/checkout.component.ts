@@ -340,7 +340,7 @@ export class CheckoutComponent implements OnInit {
 
     // compute payment info
     this.paymentInfo.amount = this.totalPrice * 100;
-    this.paymentInfo.currency = 'USD';
+    this.paymentInfo.currency = 'PHP';
 
     // if valid form then
     // - create payment intent
