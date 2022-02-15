@@ -30,6 +30,7 @@ import myAppConfig from './config/my-app-config';
 import { MembersPageComponent } from './components/members-page/members-page.component';
 import { OrderHistoryComponent } from './components/order-history/order-history.component';
 import { AuthInterceptorService } from './services/auth-interceptor.service';
+import { FooterComponent } from './components/footer/footer.component';
 
 const oktaConfig = Object.assign(
   {
@@ -85,6 +86,7 @@ const routes: Routes = [
     LoginStatusComponent,
     MembersPageComponent,
     OrderHistoryComponent,
+    FooterComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),

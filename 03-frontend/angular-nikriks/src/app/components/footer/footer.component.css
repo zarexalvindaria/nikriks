@@ -1,0 +1,10 @@
+footer {
+  background-color: #646464;
+  z-index: 1;
+  position: relative;
+  text-align: center;
+}
+
+a:hover {
+  color: #b4a340;
+}
