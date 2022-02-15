@@ -1,5 +1,7 @@
 footer {
+  background: #646464;
   background-color: #646464;
+  opacity: 1;
   z-index: 1;
   position: relative;
   text-align: center;
