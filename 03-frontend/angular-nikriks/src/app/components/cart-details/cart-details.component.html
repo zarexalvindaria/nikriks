@@ -9,7 +9,7 @@
             <th width="30%"></th>
           </tr>
 
-          <tr *ngFor="let tempCartItem of cartItems">
+          <tr *ngFor="let tempCartItem of cartItems; let i = index" [attr.data-index]="i">
             <td>
               <img src="{{ tempCartItem.imageUrl }}" class="img-responsive" width="150px" />
             </td>
@@ -22,7 +22,8 @@
                 <label>Quantity:</label>
                 <div class="row" no-gutters>
                   <div class="col">
-                    <button (click)="incrementQuantity(tempCartItem)" class="btn btn-primary btn-sm">
+                    <button (click)="incrementQuantity(tempCartItem)" id="increment-{{i}}"
+                      class="btn btn-primary btn-sm">
                       <i class="fas fa-plus"></i>
                     </button>
                   </div>
@@ -32,7 +33,8 @@
                   </div>
 
                   <div class="col">
-                    <button (click)="decrementQuantity(tempCartItem)" class="btn btn-primary btn-sm">
+                    <button (click)="decrementQuantity(tempCartItem)" id="decrement-{{i}}"
+                      class="btn btn-primary btn-sm">
                       <i class="fas fa-minus"></i>
                     </button>
                   </div>
@@ -41,7 +43,7 @@
               </div>
 
               <div>
-                <button (click)="remove(tempCartItem)" class="btn btn-primary btn-sm">
+                <button (click)="remove(tempCartItem)" id="remove-{{i}}" class="btn btn-primary btn-sm">
                   Remove
                 </button>
               </div>
@@ -62,7 +64,7 @@
               <!--p>Shipping: FREE</p-->
               <p>Total Price: {{ totalPrice | currency: "PHP" }}</p>
               <div>
-                <a routerLink="/checkout" class="btn btn-primary">Checkout</a>
+                <a routerLink="/checkout" id="checkout" class="btn btn-primary">Checkout</a>
               </div>
             </td>
           </tr>
