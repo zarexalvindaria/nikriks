@@ -32,6 +32,8 @@ import { OrderHistoryComponent } from './components/order-history/order-history.
 import { AuthInterceptorService } from './services/auth-interceptor.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { HelpComponent } from './components/help/help.component';
 
 const oktaConfig = Object.assign(
   {
@@ -62,6 +64,8 @@ const routes: Routes = [
   { path: 'login/callback', component: OktaCallbackComponent },
   { path: 'login', component: LoginComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'help', component: HelpComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'cart-details', component: CartDetailsComponent },
   { path: 'products/:id', component: ProductDetailsComponent },
@@ -89,6 +93,8 @@ const routes: Routes = [
     OrderHistoryComponent,
     FooterComponent,
     AboutComponent,
+    ContactComponent,
+    HelpComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
