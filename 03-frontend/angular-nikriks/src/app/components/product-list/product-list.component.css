@@ -22,3 +22,14 @@
   background-color: #b4a340;
   border-color: #b4a340;
 }
+
+:host ::ng-deep .page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: #b4a340;
+  border-color: #b4a340;
+}
+
+:host ::ng-deep .page-link {
+  color: #b4a340;
+}
