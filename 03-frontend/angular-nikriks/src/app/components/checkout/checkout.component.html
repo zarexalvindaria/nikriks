@@ -10,7 +10,7 @@
             <div class="col-md-2"><label>First Name</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <input formControlName="firstName" type="text" />
+                <input formControlName="firstName" id="firstName" type="text" />
 
                 <div *ngIf="firstName?.invalid && (firstName?.dirty || firstName?.touched)"
                   class="alert alert-danger mt-1">
@@ -32,7 +32,7 @@
             <div class="col-md-2"><label>Last Name</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <input formControlName="lastName" type="text" />
+                <input formControlName="lastName" id="lastName" type="text" />
                 <div *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)"
                   class="alert alert-danger mt-1">
 
@@ -54,7 +54,7 @@
             <div class="col-md-2"><label>Email</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <input formControlName="email" type="text" />
+                <input formControlName="email" id="email" type="text" />
                 <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert alert-danger mt-1">
 
                   <div *ngIf="email?.errors?.['required']">
@@ -72,7 +72,7 @@
         </div>
 
         <!-- Shipping Address -->
-        <div formGroupName="shippingAddress" class="form-area">
+        <div formGroupName="shippingAddress" id="shippingAddress" class="form-area">
           <h3>Shipping Address</h3>
 
           <div class="row">
@@ -102,7 +102,7 @@
             <div class="col-md-2"><label>Street</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <input formControlName="street" type="text" />
+                <input formControlName="street" id="shippingStreet" type="text" />
                 <div
                   *ngIf="shippingAddressStreet?.invalid && (shippingAddressStreet?.dirty || shippingAddressStreet?.touched)"
                   class="alert alert-danger mt-1">
@@ -123,7 +123,7 @@
             <div class="col-md-2"><label>City</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <input formControlName="city" type="text" />
+                <input formControlName="city" id="shippingCity" type="text" />
 
                 <div
                   *ngIf="shippingAddressCity?.invalid && (shippingAddressCity?.dirty || shippingAddressCity?.touched)"
@@ -145,7 +145,7 @@
             <div class="col-md-2"><label>Region</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <select formControlName="region">
+                <select formControlName="region" id="shippingRegion">
                   <option *ngFor="let region of shippingAddressRegions" [ngValue]="region">
                     {{ region.name }}
                   </option>
@@ -167,7 +167,7 @@
             <div class="col-md-2"><label>Zip Code</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <input formControlName="zipCode" type="text" />
+                <input formControlName="zipCode" id=" shippingZipCode" type="text" />
 
                 <div
                   *ngIf="shippingAddressZipCode?.invalid && (shippingAddressZipCode?.dirty || shippingAddressZipCode?.touched)"
@@ -190,14 +190,14 @@
         <!-- Add check box to copy shipping to billing -->
         <div class="input-space">
           <label class="au-checkbox">
-            <input type="checkbox" (change)="copyShippingAddressToBillingAddress($event)" />
+            <input type="checkbox" id="copyCheckbox" (change)="copyShippingAddressToBillingAddress($event)" />
             <span class="au-checkmark"></span>Billing Address same as Shipping
             Address
           </label>
         </div>
 
         <!-- Billing Address -->
-        <div formGroupName="billingAddress" class="form-area">
+        <div formGroupName="billingAddress" id="billingAddress" class="form-area">
           <h3>Billing Address</h3>
 
           <div class="row">
@@ -227,7 +227,7 @@
             <div class="col-md-2"><label>Street</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <input formControlName="street" type="text" />
+                <input formControlName="street" id="billingStreet" type="text" />
                 <div
                   *ngIf="billingAddressStreet?.invalid && (billingAddressStreet?.dirty || billingAddressStreet?.touched)"
                   class="alert alert-danger mt-1">
@@ -248,7 +248,7 @@
             <div class="col-md-2"><label>City</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <input formControlName="city" type="text" />
+                <input formControlName="city" id="billingCity" type="text" />
 
                 <div *ngIf="billingAddressCity?.invalid && (billingAddressCity?.dirty || billingAddressCity?.touched)"
                   class="alert alert-danger mt-1">
@@ -269,7 +269,7 @@
             <div class="col-md-2"><label>Region</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <select formControlName="region">
+                <select formControlName="region" id="billingRegion">
                   <option *ngFor="let region of billingAddressRegions" [ngValue]="region">
                     {{ region.name }}
                   </option>
@@ -292,7 +292,7 @@
             <div class="col-md-2"><label>Zip Code</label></div>
             <div class="col-md-9">
               <div class="input-space">
-                <input formControlName="zipCode" type="text" />
+                <input formControlName="zipCode" id="billingZipCode" type="text" />
               </div>
 
               <div
@@ -314,7 +314,7 @@
         <!-- Credit Card Information -->
 
         <!-- Stripe Elements Credit Card Section -->
-        <div formGroupName="creditCard" class="form-area">
+        <div formGroupName="creditCard" id="cardInput" class="form-area">
           <h3>Credit or Debit Card</h3>
 
           <div id="card-element">
@@ -323,7 +323,6 @@
 
           <!-- Used to display form errors -->
           <div id="card-errors" class="displayError.textContent!=='': 'alert alert-danger mt-1'">
-
           </div>
         </div>
 

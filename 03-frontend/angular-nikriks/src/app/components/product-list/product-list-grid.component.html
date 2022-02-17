@@ -5,7 +5,7 @@
     <div class="container-fluid">
       <div class="row">
         <!-- loop over the collection of products-->
-        <div *ngFor="let tempProduct of products; ; let i = index" [attr.data-index]="i" class="col-md-3">
+        <div *ngFor="let tempProduct of products; let i = index" [attr.data-index]="i" class="col-md-3">
           <div class="product-box">
             <a routerLink="/products/{{ tempProduct.id }}">
               <img src="{{ tempProduct.imageUrl }}" class="img-responsive" />
