@@ -22,8 +22,8 @@ RUN npm run build --prod
 FROM nginx:latest
 
 # Copy SSL Certificate
-COPY ./angular-nikriks/ssl-localhost/localhost.crt /etc/nginx/conf.d/localhost.crt
-COPY ./angular-nikriks/ssl-localhost/localhost.key /etc/nginx/conf.d/localhost.key
+# COPY ./angular-nikriks/ssl-localhost/localhost.crt /etc/nginx/conf.d/localhost.crt
+# COPY ./angular-nikriks/ssl-localhost/localhost.key /etc/nginx/conf.d/localhost.key
 
 # Copy the build output to replace the default nginx contents.
 COPY --from=build /app/dist/angular-nikriks /usr/share/nginx/html
