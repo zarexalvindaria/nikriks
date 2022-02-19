@@ -56,4 +56,4 @@ To be added..
 
 
 
-The application can now be accessed at https://localhost:4200.
+The application can now be accessed at http://localhost:4200.
