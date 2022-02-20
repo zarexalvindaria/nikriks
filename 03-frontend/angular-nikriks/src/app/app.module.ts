@@ -34,6 +34,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HelpComponent } from './components/help/help.component';
+import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 
 const oktaConfig = Object.assign(
   {
@@ -64,6 +65,7 @@ const routes: Routes = [
   { path: 'login/callback', component: OktaCallbackComponent },
   { path: 'login', component: LoginComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'help', component: HelpComponent },
   { path: 'checkout', component: CheckoutComponent },
@@ -95,6 +97,7 @@ const routes: Routes = [
     AboutComponent,
     ContactComponent,
     HelpComponent,
+    PrivacyPolicyComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
