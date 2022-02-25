@@ -32,33 +32,27 @@
 
       <!-- begin footer -->
       <div class="footer-pagination">
-        <div class="row">
-          <div class="col-md-6"></div>
-          <div class="col-md-6">
-            <div class="row">
-              <div class="col-md-9" style="padding-left: 30%">
-                <ngb-pagination [(page)]="thePageNumber" [pageSize]="thePageSize" [collectionSize]="theTotalElements"
-                  [maxSize]="5" [boundaryLinks]="true" (pageChange)="listProducts()">
-                </ngb-pagination>
-              </div>
 
-              <div class="col-md-3 mt-2" style="text-align: right">
-                <span class="mr-2">Page Size&nbsp;</span>
-
-                <select #currentSelection (change)="updatePageSize(+currentSelection.value)">
-                  <option>2</option>
-                  <option selected="true">5</option>
-                  <option>10</option>
-                  <option>20</option>
-                  <option>50</option>
-                </select>
-              </div>
-            </div>
+        <div class="center">
+          <div class="col-12 justify-content-center">
+            <ngb-pagination [(page)]="thePageNumber" [pageSize]="thePageSize" [collectionSize]="theTotalElements"
+              [maxSize]="10" [boundaryLinks]="true" (pageChange)="listProducts()">
+            </ngb-pagination>
           </div>
-        </div>
-      </div>
 
+          <span class="mr-2">Page Size &nbsp;&nbsp;</span>
+
+          <select #currentSelection (change)="updatePageSize(+currentSelection.value)">
+            <option>2</option>
+            <option>5</option>
+            <option selected="true">10</option>
+            <option>20</option>
+            <option>50</option>
+          </select>
+        </div>
+
+
+      </div>
       <!-- end footer -->
     </div>
   </div>
-</div>

@@ -33,3 +33,13 @@
 :host ::ng-deep .page-link {
   color: #b4a340;
 }
+
+.center {
+  padding: 70px 0;
+  text-align: center;
+}
+
+.justify-content-center {
+  display: flex !important;
+  justify-content: center !important;
+}
