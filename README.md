@@ -46,6 +46,8 @@ NikRik’s Batangas Lomi atbp., is a startup food business located in Pasay City
 
 ###  C. Frontend
 
+<!--
+
 1. __Pull Nikrik's Frontend Angular image from DockerHub__
 
    `docker pull zarexalvindaria/nikriksapp-frontend:latest`
@@ -53,7 +55,7 @@ NikRik’s Batangas Lomi atbp., is a startup food business located in Pasay City
 2. __Run the Docker image at port 4200__
 
    `docker run --name nikriksapp-frontend -p 4200:80 -d zarexalvindaria/nikriksapp-frontend:latest`
+-->
 
 
-
-The application can now be accessed at http://localhost:4200.
+The application can now be accessed at https://nikriks.github.io/.

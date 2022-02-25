@@ -16,7 +16,7 @@
 
 `docker network create --subnet=172.18.0.0/16 nikriks`
 
-__Note: __ Creating the Nikrik's network is required in order for the database and backend to connect. But if this is only for pushing to DockerHub, creating the network is not needed.
+__Note:__ Creating the Nikrik's network is required in order for the database and backend to connect. But if this is only for pushing to DockerHub, creating the network is not needed.
 
 ### 3. Run the image under the nikriks network at port 3310
 `docker run --name nikriksapp-db --network nikriks --ip 172.18.0.2 -p 3310:3306 -d nikriksapp-db:latest`
