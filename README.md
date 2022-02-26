@@ -3,8 +3,12 @@
 
 
 ## About
-
 NikRik’s Batangas Lomi atbp., is a startup food business located in Pasay City offering short orders and party trays for their customers such as Specials (lomi, miki guisado, and pansit), A La Carte (crispy pork sisig, creamy tofu, lechon kawali, etc.), Extras (toppings, rice, egg fried rice) and Rice Meals (pork sisig with rice).
+
+
+
+## Preview 
+<img src="https://raw.githubusercontent.com/zarexalvindaria/nikriks/main/00-starter-files/images/nikriks_screenshot.png">
 
 
 
