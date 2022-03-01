@@ -45,9 +45,18 @@ button {
   background: 0 0;
 }
 
-img {
+img,
+embed,
+object,
+video {
   max-width: 100%;
   height: auto;
+}
+
+nav a,
+button {
+  min-height: 48px;
+  min-width: 48px;
 }
 
 p {
@@ -967,7 +976,7 @@ footer > ul {
     padding: 10% 0 !important;
   }
   .header-mobile .navbar-mobile {
-    display: none;
+    /* display: none; */
     position: absolute;
     width: 100%;
     top: 66px;
