@@ -15,3 +15,8 @@ a {
 a:hover {
   color: #b4a340;
 }
+
+ul,
+ol {
+  padding-left: 0;
+}
