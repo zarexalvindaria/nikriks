@@ -1,10 +1,6 @@
-##CLOUD-SQL-CONFIGURATIONS
-spring.cloud.gcp.sql.database-name=full-stack-nikriks
-spring.cloud.gcp.sql.instance-connection-name=firm-reef-340401:us-central1:nikriksapp-db
-spring.cloud.gcp.project-id=firm-reef-340401
-spring.jpa.hibernate.ddl-auto=update
-
-spring.datasource.username=root
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.datasource.url=jdbc:mysql://nikriksapp-db/full-stack-nikriks?useSSL=false&useUnicode=yes&characterEncoding=UTF-8&allowPublicKeyRetrieval=true&serverTimezone=UTC
+spring.datasource.username=nikriksapp
 spring.datasource.password=gaj3LpyMNzJFg9%
 
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
@@ -33,8 +29,8 @@ server.port=8443
 
 
 # Enable HTTPS support (only accept HTTPS requests)
-server.ssl.enabled=true
-#server.ssl.enabled=false
+#server.ssl.enabled=true
+server.ssl.enabled=false
 
 # Alias that identifies the key in the key store
 server.ssl.key-alias=nikriks
