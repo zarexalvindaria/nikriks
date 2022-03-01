@@ -22,6 +22,7 @@ CREATE TABLE `address` (
   `city` varchar(255) DEFAULT NULL,
   `country` varchar(255) DEFAULT NULL,
   `region` varchar(255) DEFAULT NULL,
+  `barangay` varchar(255) DEFAULT NULL,
   `street` varchar(255) DEFAULT NULL,
   `zip_code` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
