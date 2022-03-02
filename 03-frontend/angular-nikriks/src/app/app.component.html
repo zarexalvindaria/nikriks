@@ -28,12 +28,14 @@
 
 
           <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav menu-center">
 
-              <app-product-category-menu></app-product-category-menu>
               <app-search></app-search>
-              <app-login-status></app-login-status>
-              <app-cart-status></app-cart-status>
+              <app-product-category-menu></app-product-category-menu>
+
+              <app-profile></app-profile>
+              <app-cart></app-cart>
+
             </ul>
           </div>
         </div>

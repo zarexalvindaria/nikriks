@@ -36,6 +36,8 @@ import { ContactComponent } from './components/contact/contact.component';
 import { HelpComponent } from './components/help/help.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const oktaConfig = Object.assign(
   {
@@ -100,6 +102,8 @@ const routes: Routes = [
     HelpComponent,
     PrivacyPolicyComponent,
     MenuComponent,
+    ProfileComponent,
+    CartComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),

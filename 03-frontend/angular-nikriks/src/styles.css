@@ -891,25 +891,39 @@ navbar-toggler {
   overflow: visible;
 }
 
+.dropdown-item:active {
+  color: #fff;
+  text-decoration: none;
+  background-color: #b4a340 !important;
+}
+
+.navbar-collapse {
+  flex-grow: 0 !important;
+  margin-right: 38%;
+}
+
 /* Responsive
       ------------------------------------*/
 @media screen and (min-width: 750px) {
-  /* .form-header {
-    display: none;
-  } */
+  .navbar-brand {
+    display: block;
+  }
 }
 
 @media screen and (max-width: 749px) {
-  /* .header-wrap {
-    display: none;
-  } */
-
-  /* .form-header {
-    display: none;
-  } */
-
   .main-content {
     padding-top: 7%;
     min-height: 100vh;
+  }
+  .navbar-brand {
+    display: block;
+  }
+
+  .au-input-xl {
+    min-width: 270px;
+  }
+  .navbar-collapse {
+    flex-grow: 0 !important;
+    margin-right: 0;
   }
 }

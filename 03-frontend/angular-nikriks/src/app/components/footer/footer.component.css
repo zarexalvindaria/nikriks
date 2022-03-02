@@ -20,3 +20,12 @@ ul,
 ol {
   padding-left: 0;
 }
+
+.social-media {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+svg {
+  margin: 0 10px 10px 10px;
+}
