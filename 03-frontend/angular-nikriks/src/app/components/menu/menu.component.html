@@ -1,0 +1,13 @@
+<button type="button" class="security-btn" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
+    aria-controls="collapseExample">
+    Categories
+</button>
+
+<div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+    <div class="card">
+        <div class="card-body">
+            <app-product-category-menu></app-product-category-menu>
+        </div>
+    </div>
+
+</div>

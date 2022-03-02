@@ -11,22 +11,63 @@
   <!-- END MENU SIDEBAR-->
 
   <!-- PAGE CONTAINER-->
+
+
   <div class="page-container">
+    <header>
+      <nav class="navbar navbar-expand-lg mb-3">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+            &#9776;
+          </button>
+          <a routerLink="/about">
+            <img src="assets/images/logo.png" alt="nikriks logo" />
+          </a>
+          <button class="navbar-brand" [routerLink]="'.'"></button>
+
+
+
+          <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+
+              <app-product-category-menu></app-product-category-menu>
+              <app-search></app-search>
+              <app-login-status></app-login-status>
+              <app-cart-status></app-cart-status>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Temporarily hide header -->
     <!-- HEADER DESKTOP-->
-    <header class="header-desktop">
+    <!-- <header class="header-desktop">
       <div class="section-content section-content-p30">
         <div class="container-fluid">
           <div class="header-wrap">
+            <app-menu></app-menu>
             <app-search></app-search>
 
             <app-login-status></app-login-status>
 
             <app-cart-status></app-cart-status>
           </div>
-          <div class="account-wrap"></div>
+
         </div>
       </div>
-    </header>
+    </header> -->
     <!-- END HEADER DESKTOP-->
 
     <!-- MAIN CONTENT-->
