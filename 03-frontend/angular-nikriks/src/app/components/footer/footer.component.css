@@ -29,3 +29,11 @@ ol {
 svg {
   margin: 0 10px 10px 10px;
 }
+
+path {
+  fill: #fff;
+}
+
+path:hover {
+  fill: #b4a340;
+}
