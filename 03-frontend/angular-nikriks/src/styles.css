@@ -902,6 +902,12 @@ navbar-toggler {
   margin-right: 38%;
 }
 
+.navbar-toggler {
+  background-color: #fff;
+  background: #fff;
+  color: #fff;
+}
+
 /* Responsive
       ------------------------------------*/
 @media screen and (min-width: 750px) {
