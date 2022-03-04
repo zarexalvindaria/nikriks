@@ -540,8 +540,6 @@ input.au-input.au-input-xl {
   background: #fff;
 }
 .main-content.page-m {
-  /* padding: 10% 15% !important; */
-  /* padding: 0 10% 5% 10% !important; */
   padding: 3% 20% 5% 20% !important;
 }
 
@@ -915,6 +913,10 @@ navbar-toggler {
   .navbar-brand {
     display: block;
   }
+
+  .main-content.page-m {
+    padding: 5% 10% 5% 10% !important;
+  }
 }
 
 @media screen and (max-width: 749px) {
@@ -932,5 +934,9 @@ navbar-toggler {
   .navbar-collapse {
     flex-grow: 0 !important;
     margin-right: 0;
+  }
+
+  .main-content.page-m {
+    padding: 5% 10% 5% 10% !important;
   }
 }
