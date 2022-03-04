@@ -97,11 +97,16 @@ export class CheckoutComponent implements OnInit {
           NikriksValidators.notOnlyWhitespace,
         ]),
         region: new FormControl('', [Validators.required]),
-        country: new FormControl('', [Validators.required]),
-        zipCode: new FormControl('', [
+        barangay: new FormControl('', [
           Validators.required,
           Validators.minLength(2),
           NikriksValidators.notOnlyWhitespace,
+        ]),
+        country: new FormControl('', [Validators.required]),
+        zipCode: new FormControl('', [
+          // Validators.required,
+          // Validators.minLength(2),
+          // NikriksValidators.notOnlyWhitespace,
         ]),
       }),
       billingAddress: this.formBuilder.group({
@@ -116,48 +121,20 @@ export class CheckoutComponent implements OnInit {
           NikriksValidators.notOnlyWhitespace,
         ]),
         region: new FormControl('', [Validators.required]),
-        country: new FormControl('', [Validators.required]),
-        zipCode: new FormControl('', [
+        barangay: new FormControl('', [
           Validators.required,
           Validators.minLength(2),
           NikriksValidators.notOnlyWhitespace,
         ]),
+        country: new FormControl('', [Validators.required]),
+        zipCode: new FormControl('', [
+          // Validators.required,
+          // Validators.minLength(2),
+          // NikriksValidators.notOnlyWhitespace,
+        ]),
       }),
-      creditCard: this.formBuilder.group({
-        /*
-        cardType: new FormControl('', [Validators.required]),
-        nameOnCard:  new FormControl('', [Validators.required, Validators.minLength(2), 
-                                          Luv2ShopValidators.notOnlyWhitespace]),
-        cardNumber: new FormControl('', [Validators.required, Validators.pattern('[0-9]{16}')]),
-        securityCode: new FormControl('', [Validators.required, Validators.pattern('[0-9]{3}')]),
-        expirationMonth: [''],
-        expirationYear: ['']
-        */
-      }),
+      creditCard: this.formBuilder.group({}),
     });
-
-    /*
-    // populate credit card months
-
-    const startMonth: number = new Date().getMonth() + 1;
-    console.log("startMonth: " + startMonth);
-
-    this.luv2ShopFormService.getCreditCardMonths(startMonth).subscribe(
-      data => {
-        console.log("Retrieved credit card months: " + JSON.stringify(data));
-        this.creditCardMonths = data;
-      }
-    );
-
-    // populate credit card years
-
-    this.luv2ShopFormService.getCreditCardYears().subscribe(
-      data => {
-        console.log("Retrieved credit card years: " + JSON.stringify(data));
-        this.creditCardYears = data;
-      }
-    );
-    */
 
     // populate countries
 
@@ -223,7 +200,10 @@ export class CheckoutComponent implements OnInit {
     return this.checkoutFormGroup.get('shippingAddress.city');
   }
   get shippingAddressRegion() {
-    return this.checkoutFormGroup.get('shippingAddress.state');
+    return this.checkoutFormGroup.get('shippingAddress.region');
+  }
+  get shippingAddressBarangay() {
+    return this.checkoutFormGroup.get('shippingAddress.barangay');
   }
   get shippingAddressZipCode() {
     return this.checkoutFormGroup.get('shippingAddress.zipCode');
@@ -239,7 +219,10 @@ export class CheckoutComponent implements OnInit {
     return this.checkoutFormGroup.get('billingAddress.city');
   }
   get billingAddressRegion() {
-    return this.checkoutFormGroup.get('billingAddress.state');
+    return this.checkoutFormGroup.get('billingAddress.region');
+  }
+  get billingAddressBarangay() {
+    return this.checkoutFormGroup.get('billingAddress.barangay');
   }
   get billingAddressZipCode() {
     return this.checkoutFormGroup.get('billingAddress.zipCode');
@@ -293,15 +276,6 @@ export class CheckoutComponent implements OnInit {
     const cartItems = this.cartService.cartItems;
 
     // create orderItems from cartItems
-    // - long way
-    /*
-    let orderItems: OrderItem[] = [];
-    for (let i=0; i < cartItems.length; i++) {
-      orderItems[i] = new OrderItem(cartItems[i]);
-    }
-    */
-
-    // - short way of doing the same thingy
     let orderItems: OrderItem[] = cartItems.map(
       (tempCartItem) => new OrderItem(tempCartItem)
     );
