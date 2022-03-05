@@ -269,14 +269,14 @@ input.au-input.au-input-xl {
 }
 
 .total {
-  background: #205b8d;
   line-height: 43px;
   color: #fff;
   border-radius: 30px;
-  border: 1px solid #0da8e4;
+  margin: 5px !important;
   float: left;
-  margin-top: 7px;
+  /* margin-top: 7px; */
   padding-left: 17px;
+  /* border: 5px solid #b4a340 !important; */
 }
 
 .total span {
@@ -905,6 +905,15 @@ navbar-toggler {
   background-color: #fff;
   background: #fff;
   color: #fff;
+}
+
+.cart-area i {
+  color: #b4a340;
+}
+
+.cart-area.d-n {
+  /* display: block; */
+  display: flex;
 }
 
 /* Responsive
