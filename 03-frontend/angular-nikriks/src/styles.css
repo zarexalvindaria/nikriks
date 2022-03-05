@@ -55,8 +55,8 @@ video {
 
 nav a,
 button {
-  min-height: 48px;
-  min-width: 48px;
+  min-height: 46px;
+  min-width: 46px;
 }
 
 p {
