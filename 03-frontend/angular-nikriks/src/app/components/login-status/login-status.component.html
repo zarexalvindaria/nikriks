@@ -12,6 +12,8 @@
         <li>
             <button *ngIf="isAuthenticated" ngbDropdownItem routerLink="/order-history" id="order-history"
                 routerLinkActive="active-link">Order History</button>
+            <button *ngIf="isAuthenticated && isAdmin" ngbDropdownItem routerLink="/admin-dashboard"
+                id="Admin Dashboard" routerLinkActive="active-link">Administrator Dashboard</button>
         </li>
     </div>
 </div>
