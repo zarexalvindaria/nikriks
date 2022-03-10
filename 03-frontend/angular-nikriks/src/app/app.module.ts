@@ -36,6 +36,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { HelpComponent } from './components/help/help.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { CustomerOrdersComponent } from './components/customer-orders/customer-orders.component';
 
 const oktaConfig = Object.assign(
   {
@@ -53,6 +54,7 @@ const oktaConfig = Object.assign(
 );
 
 const routes: Routes = [
+  { path: 'customer-orders', component: CustomerOrdersComponent },
   { path: 'admin-dashboard', component: AdminDashboardComponent },
   {
     path: 'order-history',
@@ -101,6 +103,7 @@ const routes: Routes = [
     HelpComponent,
     PrivacyPolicyComponent,
     AdminDashboardComponent,
+    CustomerOrdersComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
