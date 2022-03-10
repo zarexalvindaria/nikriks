@@ -10,8 +10,8 @@
                 routerLinkActive="active-link">Order History</button>
         </li>
         <li>
-            <button *ngIf="isAuthenticated && isAdmin" ngbDropdownItem routerLink="/order-history" id="order-history"
-                routerLinkActive="active-link">Orders</button>
+            <button *ngIf="isAuthenticated && isAdmin" ngbDropdownItem routerLink="/customer-orders"
+                id="customer-orders" routerLinkActive="active-link">Customer Orders</button>
         </li>
         <li>
             <button *ngIf="isAuthenticated && isAdmin" ngbDropdownItem routerLink="/admin-dashboard"
