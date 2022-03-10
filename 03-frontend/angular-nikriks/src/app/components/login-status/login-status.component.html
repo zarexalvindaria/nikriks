@@ -6,14 +6,20 @@
         }}</button>
     <div ngbDropdownMenu>
         <li>
-            <button *ngIf="isAuthenticated" ngbDropdownItem (click)="logout()" id="logout"
-                routerLinkActive="active-link">Logout</button>
+            <button *ngIf="isAuthenticated && !isAdmin" ngbDropdownItem routerLink="/order-history" id="order-history"
+                routerLinkActive="active-link">Order History</button>
         </li>
         <li>
-            <button *ngIf="isAuthenticated" ngbDropdownItem routerLink="/order-history" id="order-history"
-                routerLinkActive="active-link">Order History</button>
+            <button *ngIf="isAuthenticated && isAdmin" ngbDropdownItem routerLink="/order-history" id="order-history"
+                routerLinkActive="active-link">Orders</button>
+        </li>
+        <li>
             <button *ngIf="isAuthenticated && isAdmin" ngbDropdownItem routerLink="/admin-dashboard"
                 id="Admin Dashboard" routerLinkActive="active-link">Administrator Dashboard</button>
+        </li>
+        <li>
+            <button *ngIf="isAuthenticated" ngbDropdownItem (click)="logout()" id="logout"
+                routerLinkActive="active-link">Logout</button>
         </li>
     </div>
 </div>
