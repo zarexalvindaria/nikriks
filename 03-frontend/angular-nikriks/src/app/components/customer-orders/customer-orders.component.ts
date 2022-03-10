@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { OrderHistory } from 'src/app/common/order-history';
+import { CustomerOrders } from 'src/app/common/customer-orders';
+import { Customer } from 'src/app/common/customer';
 import { CustomerOrdersService } from 'src/app/services/customer-orders.service';
 
 @Component({
@@ -8,8 +9,10 @@ import { CustomerOrdersService } from 'src/app/services/customer-orders.service'
   styleUrls: ['./customer-orders.component.css'],
 })
 export class CustomerOrdersComponent implements OnInit {
-  orderHistoryList: OrderHistory[] = [];
+  orderHistoryList: CustomerOrders[] = [];
   storage: Storage = sessionStorage;
+  customer: Customer[] = [];
+  firstName?: string;
 
   constructor(private customerOrdersService: CustomerOrdersService) {}
 
@@ -20,6 +23,8 @@ export class CustomerOrdersComponent implements OnInit {
     // retrieve data from the service
     this.customerOrdersService.getOrderHistory().subscribe((data) => {
       this.orderHistoryList = data._embedded.orders;
+
+      JSON.parse(this.storage.getItem('userEmail')!);
       console.log(`Customer Orders: ` + JSON.stringify(this.orderHistoryList));
     });
   }
