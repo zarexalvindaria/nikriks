@@ -18,6 +18,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .oauth2ResourceServer()
                 .jwt();
 
+        // protect endpoint /api/users
+        http.authorizeRequests()
+                .antMatchers("/api/users/**")
+                .authenticated()
+                .and()
+                .oauth2ResourceServer()
+                .jwt();
+
         // add CORS filters
         http.cors();
 

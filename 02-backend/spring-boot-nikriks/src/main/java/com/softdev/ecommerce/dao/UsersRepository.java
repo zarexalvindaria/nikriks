@@ -1,15 +1,14 @@
 package com.softdev.ecommerce.dao;
 
-import com.softdev.ecommerce.entity.Customer;
+import com.softdev.ecommerce.entity.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource(collectionResourceRel = "users", path = "users")
-public interface CustomerRepository extends JpaRepository<Customer, Long> {
+public interface UsersRepository extends JpaRepository<User, Long> {
 
-    Customer findByEmail(String theEmail);
-    Page<Customer> findByOrderByFirstNameAsc(Pageable pageable);
+    Page<User> findByOrderByFirstNameAsc(Pageable pageable);
 
 }
