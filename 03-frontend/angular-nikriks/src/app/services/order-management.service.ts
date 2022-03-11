@@ -7,7 +7,7 @@ import { OrderHistory } from '../common/order-history';
 @Injectable({
   providedIn: 'root',
 })
-export class CustomerOrdersService {
+export class OrderManagementService {
   private orderUrl = environment.nikriksApiUrl + '/orders';
 
   constructor(private httpClient: HttpClient) {}

@@ -1,0 +1,13 @@
+table.table.table-bordered th {
+  background: #646464;
+  font-size: 14px;
+  padding: 7px;
+}
+
+.table-bordered tr {
+  border-color: #dee2e6;
+}
+
+.table-bordered td {
+  padding: 10px;
+}

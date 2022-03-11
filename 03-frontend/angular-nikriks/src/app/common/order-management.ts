@@ -1,4 +1,4 @@
-export class CustomerOrders {
+export class OrderManagement {
   id?: string;
   customer?: [] | any;
   orderTrackingNumber?: string;
