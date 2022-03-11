@@ -20,7 +20,9 @@
                     <tr *ngFor="let tempOrderHistory of orderHistoryList">
 
                         <td>
-                            {{ tempOrderHistory.customer['firstName'] }} {{ tempOrderHistory.customer['lastName'] }}
+                            {{ tempOrderHistory.customer['firstName'] }}
+                            {{ tempOrderHistory.customer['lastName']
+                            }}
                         </td>
                         <td>
                             {{ tempOrderHistory.customer['email'] }}

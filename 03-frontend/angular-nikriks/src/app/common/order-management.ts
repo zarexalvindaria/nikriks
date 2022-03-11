@@ -1,6 +1,7 @@
 export class OrderManagement {
   id?: string;
   customer?: [] | any;
+  lastName?: string;
   orderTrackingNumber?: string;
   totalPrice?: number;
   totalQuantity?: number;

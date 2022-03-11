@@ -30,7 +30,24 @@ export class AuthInterceptorService implements HttpInterceptor {
     const theEndpoint = environment.nikriksApiUrl + '/orders';
     const securedEndpoints = [theEndpoint];
 
+    const theUsersEndpoint = environment.nikriksApiUrl + '/users';
+    const securedUserEndpoint = [theUsersEndpoint];
+
     if (securedEndpoints.some((url) => request.urlWithParams.includes(url))) {
+      // get access token
+      const accessToken = await this.oktaAuth.getAccessToken();
+
+      // clone the request and add new header with access token
+      request = request.clone({
+        setHeaders: {
+          Authorization: 'Bearer ' + accessToken,
+        },
+      });
+    }
+
+    if (
+      securedUserEndpoint.some((url) => request.urlWithParams.includes(url))
+    ) {
       // get access token
       const accessToken = await this.oktaAuth.getAccessToken();
 

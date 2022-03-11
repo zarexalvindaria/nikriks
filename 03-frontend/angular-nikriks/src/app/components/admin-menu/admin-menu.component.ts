@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { OktaAuthService } from '@okta/okta-angular';
-import { LoginStatusComponent } from '../login-status/login-status.component';
 
 @Component({
   selector: 'app-admin-menu',
