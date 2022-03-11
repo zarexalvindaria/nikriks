@@ -1,3 +1,41 @@
+# Docker Commands to Update the Spring Boot Backend in Google Cloud
+
+
+
+## Instructions for Developer
+
+**Note:** Before running any of the commands below, make sure that you have [Docker](https://www.docker.com/products/docker-desktop) installed and is running in the background.
+
+### 1. Build the backend image
+
+`docker build -t nikriksapp-cloud-backend:latest .`
+
+### 2. Add tag to image
+
+`docker tag nikriksapp-cloud-backend gcr.io/firm-reef-340401/nikriksapp-cloud-backend`
+
+### 5. Push image to DockerHub
+
+`docker push gcr.io/firm-reef-340401/nikriksapp-cloud-backend`
+
+
+
+
+
+
+
+
+
+
+
+-------------------
+
+
+
+
+
+
+
 # Docker Commands to Run the Spring Boot Backend in Docker
 
 
@@ -38,3 +76,4 @@
 
 ### 3. __Run the image under the nikriks-network specifying its ip address and port at 172.18.0.3: 8443__
 `docker run --name nikriksapp-backend --network nikriks --ip 172.18.0.3 -p 8443:8443-d zarexalvindaria/nikriksapp-backend:latest`
+
