@@ -103,11 +103,7 @@ export class CheckoutComponent implements OnInit {
           NikriksValidators.notOnlyWhitespace,
         ]),
         country: new FormControl('', [Validators.required]),
-        zipCode: new FormControl('', [
-          // Validators.required,
-          // Validators.minLength(2),
-          // NikriksValidators.notOnlyWhitespace,
-        ]),
+        zipCode: new FormControl('', []),
       }),
       billingAddress: this.formBuilder.group({
         street: new FormControl('', [
@@ -127,11 +123,7 @@ export class CheckoutComponent implements OnInit {
           NikriksValidators.notOnlyWhitespace,
         ]),
         country: new FormControl('', [Validators.required]),
-        zipCode: new FormControl('', [
-          // Validators.required,
-          // Validators.minLength(2),
-          // NikriksValidators.notOnlyWhitespace,
-        ]),
+        zipCode: new FormControl('', []),
       }),
       creditCard: this.formBuilder.group({}),
     });
@@ -402,34 +394,6 @@ export class CheckoutComponent implements OnInit {
     // navigate back to the products page
     this.router.navigateByUrl('/products');
   }
-
-  /*
-  handleMonthsAndYears() {
-
-    const creditCardFormGroup = this.checkoutFormGroup.get('creditCard');
-
-    const currentYear: number = new Date().getFullYear();
-    const selectedYear: number = Number(creditCardFormGroup.value.expirationYear);
-
-    // if the current year equals the selected year, then start with the current month
-
-    let startMonth: number;
-
-    if (currentYear === selectedYear) {
-      startMonth = new Date().getMonth() + 1;
-    }
-    else {
-      startMonth = 1;
-    }
-
-    this.luv2ShopFormService.getCreditCardMonths(startMonth).subscribe(
-      data => {
-        console.log("Retrieved credit card months: " + JSON.stringify(data));
-        this.creditCardMonths = data;
-      }
-    );
-  }
-  */
 
   getRegions(formGroupName: string) {
     const formGroup = this.checkoutFormGroup.get(formGroupName);

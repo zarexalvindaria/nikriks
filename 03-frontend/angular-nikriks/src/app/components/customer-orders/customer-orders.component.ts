@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerOrders } from 'src/app/common/customer-orders';
-import { Customer } from 'src/app/common/customer';
 import { CustomerOrdersService } from 'src/app/services/customer-orders.service';
 
 @Component({
@@ -11,7 +10,6 @@ import { CustomerOrdersService } from 'src/app/services/customer-orders.service'
 export class CustomerOrdersComponent implements OnInit {
   orderHistoryList: CustomerOrders[] = [];
   storage: Storage = sessionStorage;
-  customer: Customer[] = [];
   firstName?: string;
 
   constructor(private customerOrdersService: CustomerOrdersService) {}
