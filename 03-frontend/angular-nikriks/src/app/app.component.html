@@ -4,7 +4,7 @@
     <header>
 
       <!-- Logo -->
-      <div class="title-bar topbar-center-logo pt-3">
+      <div class="topbar-center-logo pt-3">
         <a routerLink="/about"><img src="assets/images/logo.png" alt="nikriks logo" /></a>
       </div>
       <!-- End logo -->
@@ -18,9 +18,10 @@
           <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
             <!-- <ul class="navbar-nav"> -->
             <ul class="navbar-nav">
-              <li>
+              <!-- <li>
                 <app-search></app-search>
-              </li>
+              </li> -->
+              <app-search></app-search>
               <li>
                 <app-product-category-menu></app-product-category-menu>
               </li>

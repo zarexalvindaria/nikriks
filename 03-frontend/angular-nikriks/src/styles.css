@@ -254,6 +254,7 @@ input.au-input.au-input-xl {
   -o-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   transition: all 0.5s ease;
+  vertical-align: middle;
 }
 
 .cart-area.d-n {
@@ -298,32 +299,27 @@ input.au-input.au-input-xl {
 }
 
 .au-btn-submit {
-  position: relative;
-  right: 0;
+  /* position: relative;
+  right: 0; */
   min-width: 95px;
   color: #fff;
-  border: 1px solid #205b8d;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 43px;
-  background: #205b8d;
-}
-
-.au-btn-submit:hover {
-  background: #05143f;
+  vertical-align: middle;
 }
 
 .au-btn-submit > i {
   font-size: 20px;
   color: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
+  /* position: absolute; */
+  /* top: 50%;
+  left: 50%; */
+  /* -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
 }
 
 /* 
@@ -915,6 +911,7 @@ navbar-toggler {
   margin: 0 auto;
   display: block;
   text-align: center;
+  align-items: center;
 }
 
 .navbar-nav > li {
