@@ -1,4 +1,3 @@
-import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
@@ -64,6 +63,11 @@ export class CheckoutComponent implements OnInit {
     this.reviewCartDetails();
 
     // read the user's email address from browser storage
+    // const theFirstName = JSON.parse(this.storage.getItem('userFirstName')!);
+    // const theLastName = JSON.parse(this.storage.getItem('userLastName')!);
+    // const theMobileNumber = JSON.parse(
+    //   this.storage.getItem('userMobileNumber')!
+    // );
     const theEmail = JSON.parse(this.storage.getItem('userEmail')!);
 
     this.checkoutFormGroup = this.formBuilder.group({
@@ -78,6 +82,11 @@ export class CheckoutComponent implements OnInit {
           Validators.required,
           Validators.minLength(2),
           NikriksValidators.notOnlyWhitespace,
+        ]),
+
+        mobileNumber: new FormControl('', [
+          Validators.required,
+          Validators.pattern('^[09|\\+639]+\\d{10}'),
         ]),
 
         email: new FormControl(theEmail, [
@@ -180,6 +189,9 @@ export class CheckoutComponent implements OnInit {
   }
   get lastName() {
     return this.checkoutFormGroup.get('customer.lastName');
+  }
+  get mobileNumber() {
+    return this.checkoutFormGroup.get('customer.mobileNumber');
   }
   get email() {
     return this.checkoutFormGroup.get('customer.email');

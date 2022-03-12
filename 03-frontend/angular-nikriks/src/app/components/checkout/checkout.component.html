@@ -51,6 +51,27 @@
           </div>
 
           <div class="row">
+            <div class="col-md-2"><label>Mobile Number</label></div>
+            <div class="col-md-9">
+              <div class="input-space">
+                <input formControlName="mobileNumber" id="mobileNumber" type="text" />
+                <div *ngIf="mobileNumber?.invalid && (mobileNumber?.dirty || mobileNumber?.touched)"
+                  class="alert alert-danger mt-1">
+
+                  <div *ngIf="mobileNumber?.errors?.['required'] || mobileNumber?.errors?.['notOnlyWhitespace']">
+                    Mobile Number is required
+                  </div>
+
+                  <div *ngIf="mobileNumber?.errors?.['pattern']">
+                    Mobile number must be a valid email address format.
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
             <div class="col-md-2"><label>Email</label></div>
             <div class="col-md-9">
               <div class="input-space">
