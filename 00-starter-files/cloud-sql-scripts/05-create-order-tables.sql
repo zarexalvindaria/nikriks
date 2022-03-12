@@ -35,6 +35,7 @@ CREATE TABLE `customer` (
   `id` bigint NOT NULL AUTO_INCREMENT,
   `first_name` varchar(255) DEFAULT NULL,
   `last_name` varchar(255) DEFAULT NULL,
+  `mobile_number` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -50,8 +51,10 @@ CREATE TABLE `orders` (
   `billing_address_id` bigint DEFAULT NULL,
   `customer_id` bigint DEFAULT NULL,
   `shipping_address_id` bigint DEFAULT NULL,
-  `status` varchar(128) DEFAULT NULL,
-  `date_created` datetime(6) DEFAULT NULL,
+  `order_status` ENUM('PREPARING', 'ON-DELIVERY', 'DELIVERED', 'CANCELLED') DEFAULT NULL,
+  `paid` BIT DEFAULT 1,
+  `order_date` datetime(6) DEFAULT NULL,
+  `delivery_date` datetime(6) DEFAULT NULL,
   `last_updated` datetime(6) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UK_billing_address_id` (`billing_address_id`),
