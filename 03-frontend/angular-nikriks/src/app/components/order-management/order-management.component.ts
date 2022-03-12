@@ -11,7 +11,7 @@ import { OrderManagementService } from 'src/app/services/order-management.servic
 export class OrderManagementComponent implements OnInit {
   orderHistoryList: OrderManagement[] = [];
   storage: Storage = sessionStorage;
-  customer: Customer[] = [];
+  // customer: Customer[] = [];
 
   constructor(private orderManagementService: OrderManagementService) {}
 

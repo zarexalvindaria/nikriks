@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { OrderHistory } from '../common/order-history';
+import { OrderManagement } from '../common/order-management';
 
 @Injectable({
   providedIn: 'root',
@@ -22,6 +22,6 @@ export class OrderManagementService {
 
 interface GetResponseOrderHistory {
   _embedded: {
-    orders: OrderHistory[];
+    orders: OrderManagement[];
   };
 }

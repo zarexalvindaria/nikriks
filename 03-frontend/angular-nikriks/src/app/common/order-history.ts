@@ -5,4 +5,5 @@ export class OrderHistory {
   totalQuantity?: number;
   dateCreated?: Date;
   status?: string;
+  orderStatus?: string;
 }

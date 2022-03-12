@@ -6,15 +6,16 @@
             <div *ngIf="orderHistoryList.length > 0">
                 <table class="table table-bordered">
                     <tr>
-                        <th width="10">Customer Name</th>
-                        <th width="10">Email Address</th>
-                        <th width="10">Order Tracking Number</th>
-                        <th width="10">Total Price</th>
-                        <th width="10">Total Quantity</th>
-                        <th width="10">Order Date</th>
-                        <th width="10">Delivery Date</th>
-                        <th width="10">Payment Status</th>
-                        <th width="10">Order Status</th>
+                        <th>Customer Name</th>
+                        <th>Email Address</th>
+                        <th>Order Tracking Number</th>
+                        <th>Total Price</th>
+                        <th>Total Quantity</th>
+                        <th>Order Date</th>
+                        <th>Shipping Address</th>
+                        <th>Delivery Date</th>
+                        <th>Paid?</th>
+                        <th>Order Status</th>
                     </tr>
 
                     <tr *ngFor="let tempOrderHistory of orderHistoryList">
@@ -40,13 +41,18 @@
                             {{ tempOrderHistory.dateCreated | date: 'medium' }}
                         </td>
                         <td>
-                            {{ tempOrderHistory.dateCreated | date: 'medium' }}
+                            {{ tempOrderHistory.shippingAddress['street'] }},
+                            {{ tempOrderHistory.shippingAddress['barangay'] }},
+                            {{ tempOrderHistory.shippingAddress['city'] }},
+                            {{ tempOrderHistory.shippingAddress['region'] }},
+                            {{ tempOrderHistory.shippingAddress['zupCode'] }},
+                        </td>
+                        <td></td>
+                        <td>
+                            {{ tempOrderHistory.paid }}
                         </td>
                         <td>
-                            Paid
-                        </td>
-                        <td>
-                            Preparing
+                            {{ tempOrderHistory.orderStatus }}
                         </td>
                     </tr>
                 </table>

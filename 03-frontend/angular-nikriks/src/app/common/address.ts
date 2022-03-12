@@ -1,8 +1,8 @@
 export class Address {
   street?: string;
+  barangay?: string;
   city?: string;
   region?: string;
-  barangay?: string;
-  country?: string;
   zipCode?: string;
+  country?: string;
 }
