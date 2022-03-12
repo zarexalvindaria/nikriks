@@ -21,7 +21,6 @@ export class UserManagementComponent implements OnInit {
     this.userManagementService.getCustomerList().subscribe((data) => {
       this.customerList = data._embedded.users;
 
-      JSON.parse(this.storage.getItem('userEmail')!);
       console.log(`Customer Orders: ` + JSON.stringify(this.customerList));
     });
   }

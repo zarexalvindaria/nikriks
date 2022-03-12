@@ -86,7 +86,7 @@ export class CheckoutComponent implements OnInit {
 
         mobileNumber: new FormControl('', [
           Validators.required,
-          Validators.pattern('^[09|\\+639]+\\d{10}'),
+          Validators.pattern('^(09|\\+639)+\\d{9}$'),
         ]),
 
         email: new FormControl(theEmail, [
@@ -111,7 +111,7 @@ export class CheckoutComponent implements OnInit {
           Validators.minLength(2),
           NikriksValidators.notOnlyWhitespace,
         ]),
-        country: new FormControl('', [Validators.required]),
+        country: new FormControl('Philippines', [Validators.required]),
         zipCode: new FormControl('', []),
       }),
       billingAddress: this.formBuilder.group({

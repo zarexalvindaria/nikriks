@@ -35,7 +35,7 @@ export class AuthInterceptorService implements HttpInterceptor {
 
     if (securedEndpoints.some((url) => request.urlWithParams.includes(url))) {
       // get access token
-      const accessToken = await this.oktaAuth.getAccessToken();
+      const accessToken = this.oktaAuth.getAccessToken();
 
       // clone the request and add new header with access token
       request = request.clone({
@@ -49,7 +49,7 @@ export class AuthInterceptorService implements HttpInterceptor {
       securedUserEndpoint.some((url) => request.urlWithParams.includes(url))
     ) {
       // get access token
-      const accessToken = await this.oktaAuth.getAccessToken();
+      const accessToken = this.oktaAuth.getAccessToken();
 
       // clone the request and add new header with access token
       request = request.clone({

@@ -6,15 +6,19 @@
             <div *ngIf="customerList.length > 0">
                 <table class="table table-bordered">
                     <tr>
-                        <th width="33">Email Address</th>
-                        <th width="33">First Name</th>
-                        <th width="33">Last Name</th>
+                        <th width="25">Email Address</th>
+                        <th width="25">Mobile Number</th>
+                        <th width="25">First Name</th>
+                        <th width="25">Last Name</th>
 
                     </tr>
 
                     <tr *ngFor="let tempCustomer of customerList">
                         <td>
                             {{ tempCustomer.email }}
+                        </td>
+                        <td>
+                            {{ tempCustomer.mobileNumber }}
                         </td>
                         <td>
                             {{ tempCustomer.firstName }}
