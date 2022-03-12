@@ -29,6 +29,7 @@ export class CheckoutComponent implements OnInit {
   totalPrice: number = 0;
   totalQuantity: number = 0;
   orderStatus: string = 'New';
+  paid?: boolean = true;
 
   creditCardYears: number[] = [];
   creditCardMonths: number[] = [];
@@ -277,6 +278,7 @@ export class CheckoutComponent implements OnInit {
     order.totalPrice = this.totalPrice;
     order.totalQuantity = this.totalQuantity;
     order.orderStatus = this.orderStatus;
+    order.paid = this.paid;
 
     // get cart items
     const cartItems = this.cartService.cartItems;
