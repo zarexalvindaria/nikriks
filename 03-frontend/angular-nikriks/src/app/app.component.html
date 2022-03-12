@@ -1,30 +1,39 @@
 <div class="page-wrapper">
 
-  <!-- PAGE CONTAINER-->
-
-
   <div class="page-container">
     <header>
-      <nav class="navbar navbar-expand-lg mb-3">
+
+      <!-- Logo -->
+      <div class="title-bar topbar-center-logo pt-3">
+        <a routerLink="/about"><img src="assets/images/logo.png" alt="nikriks logo" /></a>
+      </div>
+      <!-- End logo -->
+      <nav class="navbar navbar-expand-lg mb-3 pb-3 pt-3">
+        <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+          &#9776;
+        </button>
+
         <div class="container-fluid">
-          <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
-            &#9776;
-          </button>
-          <a routerLink="/about">
-            <img src="assets/images/logo.png" alt="nikriks logo" />
-          </a>
-          <button class="navbar-brand" [routerLink]="'.'"></button>
-
-
 
           <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
-            <ul class="navbar-nav menu-center">
+            <!-- <ul class="navbar-nav"> -->
+            <ul class="navbar-nav">
+              <li>
+                <app-search></app-search>
+              </li>
+              <li>
+                <app-product-category-menu></app-product-category-menu>
+              </li>
 
-              <app-search></app-search>
-              <app-product-category-menu></app-product-category-menu>
-              <app-admin-menu></app-admin-menu>
-              <app-login-status></app-login-status>
-              <app-cart-status></app-cart-status>
+              <li>
+                <app-admin-menu></app-admin-menu>
+              </li>
+              <li>
+                <app-login-status></app-login-status>
+              </li>
+              <li>
+                <app-cart-status></app-cart-status>
+              </li>
 
             </ul>
           </div>
@@ -33,38 +42,9 @@
       </nav>
     </header>
 
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Temporarily hide header -->
-    <!-- HEADER DESKTOP-->
-    <!-- <header class="header-desktop">
-      <div class="section-content section-content-p30">
-        <div class="container-fluid">
-          <div class="header-wrap">
-            <app-menu></app-menu>
-            <app-search></app-search>
-
-            <app-login-status></app-login-status>
-
-            <app-cart-status></app-cart-status>
-          </div>
-
-        </div>
-      </div>
-    </header> -->
-    <!-- END HEADER DESKTOP-->
-
     <!-- MAIN CONTENT-->
     <router-outlet></router-outlet>
+    <!-- END MAIN CONTENT-->
   </div>
 </div>
 <app-footer></app-footer>

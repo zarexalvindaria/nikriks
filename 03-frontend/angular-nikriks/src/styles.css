@@ -896,11 +896,6 @@ navbar-toggler {
   background-color: #b4a340 !important;
 }
 
-.navbar-collapse {
-  flex-grow: 0 !important;
-  margin-right: 38%;
-}
-
 .navbar-toggler {
   background-color: #fff;
   background: #fff;
@@ -912,8 +907,28 @@ navbar-toggler {
 }
 
 .cart-area.d-n {
-  /* display: block; */
   display: flex;
+}
+
+.navbar-nav {
+  float: none;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+.navbar-nav > li {
+  display: inline-block;
+  float: none;
+}
+
+.topbar-center-logo {
+  background: #646464;
+  display: flex;
+  flex-grow: 1;
+  flex-basis: auto;
+  flex-direction: row;
+  justify-content: center;
 }
 
 /* Responsive
@@ -939,10 +954,6 @@ navbar-toggler {
 
   .au-input-xl {
     min-width: 270px;
-  }
-  .navbar-collapse {
-    flex-grow: 0 !important;
-    margin-right: 0;
   }
 
   .main-content.page-m {
