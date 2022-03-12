@@ -232,10 +232,6 @@ section {
   padding: 0 30px;
 }
 
-.au-input-xl {
-  min-width: 500px;
-}
-
 input.au-input.au-input-xl {
   border-radius: 40px !important;
   margin-right: 15px;
@@ -299,27 +295,19 @@ input.au-input.au-input-xl {
 }
 
 .au-btn-submit {
-  /* position: relative;
-  right: 0; */
   min-width: 95px;
   color: #fff;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 43px;
   vertical-align: middle;
+  border: 5px solid #b4a340;
+  margin: 5px;
 }
 
 .au-btn-submit > i {
   font-size: 20px;
   color: #fff;
-  /* position: absolute; */
-  /* top: 50%;
-  left: 50%; */
-  /* -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); */
 }
 
 /* 
@@ -930,17 +918,8 @@ navbar-toggler {
 
 /* Responsive
       ------------------------------------*/
-@media screen and (min-width: 750px) {
-  .navbar-brand {
-    display: block;
-  }
 
-  .main-content.page-m {
-    padding: 5% 10% 5% 10% !important;
-  }
-}
-
-@media screen and (max-width: 749px) {
+@media screen and (min-width: 749px) {
   .main-content {
     min-height: 100vh;
   }
@@ -954,5 +933,34 @@ navbar-toggler {
 
   .main-content.page-m {
     padding: 5% 10% 5% 10% !important;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  .navbar-brand {
+    display: block;
+  }
+
+  .main-content.page-m {
+    padding: 5% 10% 5% 10% !important;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .au-input-xl {
+    min-width: 150px;
+  }
+
+  .au-btn-submit {
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (min-width: 1278px) {
+  .au-input-xl {
+    min-width: 400px !important;
+  }
+  .au-btn-submit {
+    margin-right: 30px;
   }
 }
