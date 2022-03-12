@@ -11,3 +11,7 @@ table.table.table-bordered th {
 .table-bordered td {
   padding: 10px;
 }
+
+span {
+  padding: 0px;
+}

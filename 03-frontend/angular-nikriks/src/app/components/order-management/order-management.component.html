@@ -41,11 +41,14 @@
                             {{ tempOrderHistory.dateCreated | date: 'medium' }}
                         </td>
                         <td>
-                            {{ tempOrderHistory.shippingAddress['street'] }},
-                            {{ tempOrderHistory.shippingAddress['barangay'] }},
-                            {{ tempOrderHistory.shippingAddress['city'] }},
-                            {{ tempOrderHistory.shippingAddress['region'] }},
-                            {{ tempOrderHistory.shippingAddress['zupCode'] }},
+                            <span>{{ tempOrderHistory.shippingAddress['street'] }},
+                                {{ tempOrderHistory.shippingAddress['barangay'] }},
+                                {{ tempOrderHistory.shippingAddress['city'] }},
+                                {{ tempOrderHistory.shippingAddress['region'] }}
+                            </span>
+                            <span *ngIf="tempOrderHistory.shippingAddress['zipCode'] != ''">
+                                {{ tempOrderHistory.shippingAddress['zipCode'] }}
+                            </span>
                         </td>
                         <td></td>
                         <td>
