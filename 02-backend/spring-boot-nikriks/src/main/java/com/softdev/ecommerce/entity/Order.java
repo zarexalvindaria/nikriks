@@ -30,10 +30,13 @@ public class Order {
     @Column(name="total_price")
     private BigDecimal totalPrice;
 
-    @Column(name="status")
-    private String status;
+    @Column(name="order_status")
+    private String orderStatus;
 
-    @Column(name="date_created")
+    @Column(name="paid")
+    private boolean paid;
+
+    @Column(name="order_date")
     @CreationTimestamp
     private Date dateCreated;
 
