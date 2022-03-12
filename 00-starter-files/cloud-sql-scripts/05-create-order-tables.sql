@@ -51,7 +51,7 @@ CREATE TABLE `orders` (
   `billing_address_id` bigint DEFAULT NULL,
   `customer_id` bigint DEFAULT NULL,
   `shipping_address_id` bigint DEFAULT NULL,
-  `order_status` ENUM('PREPARING', 'ON-DELIVERY', 'DELIVERED', 'CANCELLED') DEFAULT NULL,
+  `order_status` ENUM('New', 'Pending', 'Preparing', 'On-Delivery', 'Fulfilled', 'Cancelled') DEFAULT NULL,
   `paid` BIT DEFAULT 1,
   `order_date` datetime(6) DEFAULT NULL,
   `delivery_date` datetime(6) DEFAULT NULL,
