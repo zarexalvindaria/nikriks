@@ -2,17 +2,18 @@
     <div class="section-content section-content-p30">
         <div class="container-fluid">
             <h3>Catalog Management</h3>
+            <hr />
 
             <div *ngIf="products.length > 0">
                 <table class="table table-bordered">
                     <tr>
-                        <th width="10">SKU</th>
-                        <th width="10">Product Name</th>
-                        <th width="10">description</th>
-                        <th width="10">Unit Price</th>
-                        <th width="10">Image URL</th>
-                        <th width="10">Active</th>
-                        <th width="10">Units in Stock</th>
+                        <th>SKU</th>
+                        <th>Product Name</th>
+                        <th>Description</th>
+                        <th>Unit Price</th>
+                        <th>Image URL</th>
+                        <th>Active</th>
+                        <th>Units in Stock</th>
                     </tr>
 
                     <tr *ngFor="let tempProductList of products">

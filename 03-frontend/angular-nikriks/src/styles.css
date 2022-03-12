@@ -135,7 +135,7 @@ a:hover {
 }
 
 .main-content {
-  padding-top: 3%;
+  padding-top: 10px;
   min-height: 100vh;
 }
 
@@ -945,7 +945,6 @@ navbar-toggler {
 
 @media screen and (max-width: 749px) {
   .main-content {
-    padding-top: 7%;
     min-height: 100vh;
   }
   .navbar-brand {
