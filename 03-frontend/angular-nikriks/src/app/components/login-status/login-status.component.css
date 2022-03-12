@@ -3,7 +3,7 @@
     Rename as .security-btn
     Change border to 10px
 */
-
+/* 
 .security-btn {
   position: relative;
   right: 0;
@@ -14,7 +14,7 @@
   -moz-border-radius: 3px;
   border-radius: 43px;
   background: #205b8d;
-}
+} */
 
 /*
     Copy from styles.css -> .form-header

@@ -43,3 +43,21 @@
   display: flex !important;
   justify-content: center !important;
 }
+
+.product-box {
+  /* display: flex; */
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  text-align: center !important;
+}
+
+.product-box img {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.price {
+  margin: 0.5em;
+}

@@ -1,0 +1,55 @@
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            <h3>Catalog Management</h3>
+
+            <div *ngIf="products.length > 0">
+                <table class="table table-bordered">
+                    <tr>
+                        <th width="10">SKU</th>
+                        <th width="10">Product Name</th>
+                        <th width="10">description</th>
+                        <th width="10">Unit Price</th>
+                        <th width="10">Image URL</th>
+                        <th width="10">Active</th>
+                        <th width="10">Units in Stock</th>
+                    </tr>
+
+                    <tr *ngFor="let tempProductList of products">
+
+                        <td>
+                            {{ tempProductList.sku }}
+                        </td>
+                        <td>
+                            {{ tempProductList.name }}
+                        </td>
+                        <td>
+                            {{ tempProductList.description }}
+                        </td>
+                        <td>
+                            {{ tempProductList.unitPrice | currency: 'PHP' }}
+                        </td>
+                        <td>
+                            {{ tempProductList.imageUrl }}
+                        </td>
+                        <td>
+                            {{ tempProductList.active }}
+                        </td>
+                        <td>
+                            {{ tempProductList.unitsInStock }}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <!-- if order history is empty then display a message -->
+            <div *ngIf="products.length == 0" class="alert alert-warning col-md-12" role="alert">
+                No products found.
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

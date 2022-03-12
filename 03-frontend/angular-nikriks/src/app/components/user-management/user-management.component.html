@@ -1,0 +1,38 @@
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            <h3>User Management</h3>
+
+            <div *ngIf="customerList.length > 0">
+                <table class="table table-bordered">
+                    <tr>
+                        <th width="33">Email Address</th>
+                        <th width="33">First Name</th>
+                        <th width="33">Last Name</th>
+
+                    </tr>
+
+                    <tr *ngFor="let tempCustomer of customerList">
+                        <td>
+                            {{ tempCustomer.email }}
+                        </td>
+                        <td>
+                            {{ tempCustomer.firstName }}
+                        </td>
+                        <td>
+                            {{ tempCustomer.lastName }}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <!-- if order history is empty then display a message -->
+            <div *ngIf="customerList.length == 0" class="alert alert-warning col-md-12" role="alert">
+                No User found.
+            </div>
+
+        </div>
+    </div>
+
+</div>

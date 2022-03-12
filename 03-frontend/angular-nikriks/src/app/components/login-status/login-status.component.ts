@@ -7,8 +7,10 @@ import { OktaAuthService } from '@okta/okta-angular';
   styleUrls: ['./login-status.component.css'],
 })
 export class LoginStatusComponent implements OnInit {
+  userGroup?: string;
+  isAdmin?: boolean;
   isAuthenticated: boolean = false;
-  userFullName?: string;
+  userFirstName?: string;
 
   storage: Storage = sessionStorage;
 
@@ -25,10 +27,12 @@ export class LoginStatusComponent implements OnInit {
   getUserDetails() {
     if (this.isAuthenticated) {
       // Fetch the logged in user details (user's claims)
-      //
-      // user full name is exposed as a property name
       this.oktaAuthService.getUser().then((res) => {
-        this.userFullName = res.name;
+        this.userFirstName = res.given_name;
+
+        console.log(`user: ` + JSON.stringify(res));
+        this.isAdmin = res['groups'].includes('Administrator');
+        console.log('userGroup: ' + this.userGroup);
 
         // retrieve the user's email from authentication response
         const theEmail = res.email;

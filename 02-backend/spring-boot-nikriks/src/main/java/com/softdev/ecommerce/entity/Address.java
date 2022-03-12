@@ -25,6 +25,9 @@ public class Address {
     @Column(name="region")
     private String region;
 
+    @Column(name="barangay")
+    private String barangay;
+
     @Column(name="country")
     private String country;
 

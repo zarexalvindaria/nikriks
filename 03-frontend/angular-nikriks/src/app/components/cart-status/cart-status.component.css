@@ -1,8 +1,20 @@
 .total {
   background-color: #b4a340;
   border: #b4a340;
+  white-space: nowrap;
+  margin: 5px !important;
+  border: 5px;
+  vertical-align: middle;
+  box-sizing: border-box;
 }
 
 .cart-area i {
   color: #b4a340;
+}
+
+.security-btn {
+  border: 5px solid #b4a340;
+  background: #b4a340;
+  padding: 0 10px;
+  white-space: nowrap;
 }

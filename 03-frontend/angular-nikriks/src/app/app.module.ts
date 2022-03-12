@@ -35,6 +35,10 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { HelpComponent } from './components/help/help.component';
 import { PrivacyPolicyComponent } from './components/privacy-policy/privacy-policy.component';
+import { AdminMenuComponent } from './components/admin-menu/admin-menu.component';
+import { CatalogManagementComponent } from './components/catalog-management/catalog-management.component';
+import { OrderManagementComponent } from './components/order-management/order-management.component';
+import { UserManagementComponent } from './components/user-management/user-management.component';
 
 const oktaConfig = Object.assign(
   {
@@ -52,6 +56,21 @@ const oktaConfig = Object.assign(
 );
 
 const routes: Routes = [
+  {
+    path: 'catalog-management',
+    component: CatalogManagementComponent,
+    canActivate: [OktaAuthGuard],
+  },
+  {
+    path: 'user-management',
+    component: UserManagementComponent,
+    canActivate: [OktaAuthGuard],
+  },
+  {
+    path: 'order-management',
+    component: OrderManagementComponent,
+    canActivate: [OktaAuthGuard],
+  },
   {
     path: 'order-history',
     component: OrderHistoryComponent,
@@ -98,6 +117,10 @@ const routes: Routes = [
     ContactComponent,
     HelpComponent,
     PrivacyPolicyComponent,
+    AdminMenuComponent,
+    CatalogManagementComponent,
+    OrderManagementComponent,
+    UserManagementComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
