@@ -24,6 +24,9 @@ public class Customer {
     @Column(name="last_name")
     private String lastName;
 
+    @Column(name="mobile_number")
+    private String mobileNumber;
+
     @Column(name="email")
     private String email;
 
