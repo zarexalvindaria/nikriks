@@ -13,7 +13,6 @@
                         <th>Unit Price</th>
                         <th>Image URL</th>
                         <th>Active</th>
-                        <th>Units in Stock</th>
                     </tr>
 
                     <tr *ngFor="let tempProductList of products">
@@ -35,9 +34,6 @@
                         </td>
                         <td>
                             {{ tempProductList.active }}
-                        </td>
-                        <td>
-                            {{ tempProductList.unitsInStock }}
                         </td>
                     </tr>
                 </table>
