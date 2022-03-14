@@ -13,9 +13,10 @@
                         <th>Unit Price</th>
                         <th>Image URL</th>
                         <th>Active</th>
+                        <th></th>
                     </tr>
 
-                    <tr *ngFor="let tempProductList of products">
+                    <tr *ngFor="let tempProductList of products; let i = index" [attr.data-index]="i">
 
                         <td>
                             {{ tempProductList.sku }}
@@ -34,6 +35,11 @@
                         </td>
                         <td>
                             {{ tempProductList.active }}
+                        </td>
+                        <td>
+                            <button id="edit-{{i}}" class="btn btn-primary btn-sm">
+                                Remove
+                            </button>
                         </td>
                     </tr>
                 </table>
