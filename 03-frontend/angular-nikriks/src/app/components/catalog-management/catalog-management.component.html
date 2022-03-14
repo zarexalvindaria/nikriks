@@ -37,10 +37,10 @@
                             {{ tempProductList.active }}
                         </td>
                         <td>
-                            <button id="edit-{{i}}" class="btn btn-primary btn-sm">
-                                Remove
-                            </button>
+                            <a routerLink="/product-update/{{ tempProductList.id }}" id="product-update-{{i}}"
+                                class="btn btn-primary">Edit</a>
                         </td>
+
                     </tr>
                 </table>
             </div>

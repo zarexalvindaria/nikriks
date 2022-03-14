@@ -39,6 +39,7 @@ import { AdminMenuComponent } from './components/admin-menu/admin-menu.component
 import { CatalogManagementComponent } from './components/catalog-management/catalog-management.component';
 import { OrderManagementComponent } from './components/order-management/order-management.component';
 import { UserManagementComponent } from './components/user-management/user-management.component';
+import { ProductDetailsUpdateComponent } from './components/product-details-update/product-details-update.component';
 
 const oktaConfig = Object.assign(
   {
@@ -56,6 +57,11 @@ const oktaConfig = Object.assign(
 );
 
 const routes: Routes = [
+  {
+    path: 'product-update/:id',
+    component: ProductDetailsUpdateComponent,
+    canActivate: [OktaAuthGuard],
+  },
   {
     path: 'catalog-management',
     component: CatalogManagementComponent,
@@ -121,6 +127,7 @@ const routes: Routes = [
     CatalogManagementComponent,
     OrderManagementComponent,
     UserManagementComponent,
+    ProductDetailsUpdateComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),

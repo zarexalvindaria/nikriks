@@ -1,0 +1,18 @@
+.btn-primary {
+  color: #fff;
+  background-color: #646464;
+  border-color: #646464;
+}
+
+.btn-primary:hover {
+  background-color: #b4a340;
+  border-color: #b4a340;
+}
+
+.price {
+  color: #b4a340;
+}
+
+a {
+  color: #b4a340;
+}

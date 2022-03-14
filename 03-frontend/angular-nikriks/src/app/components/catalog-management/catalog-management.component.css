@@ -11,3 +11,25 @@ table.table.table-bordered th {
 .table-bordered td {
   padding: 10px;
 }
+
+.btn-primary {
+  color: #fff;
+  background-color: #646464;
+  border-color: #646464;
+  padding: 6px;
+}
+
+.btn-primary:hover {
+  background-color: #b4a340;
+  border-color: #b4a340;
+}
+
+table.table.table-bordered th {
+  background: #646464;
+  font-size: 14px;
+  padding: 7px;
+}
+
+.table-bordered tr {
+  border-color: #dee2e6;
+}

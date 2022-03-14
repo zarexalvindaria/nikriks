@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { CartItem } from 'src/app/common/cart-item';
 import { Product } from 'src/app/common/product';
 import { CatalogManagementService } from 'src/app/services/catalog-management.service';
 
@@ -12,10 +10,7 @@ import { CatalogManagementService } from 'src/app/services/catalog-management.se
 export class CatalogManagementComponent implements OnInit {
   products: Product[] = [];
 
-  constructor(
-    private catalogManagementService: CatalogManagementService,
-    private route: ActivatedRoute
-  ) {}
+  constructor(private catalogManagementService: CatalogManagementService) {}
 
   ngOnInit(): void {
     this.handleOrderHistory();
