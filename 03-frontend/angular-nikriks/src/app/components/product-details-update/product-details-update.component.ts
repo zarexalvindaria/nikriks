@@ -5,9 +5,10 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/common/product';
 import { ProductService } from 'src/app/services/product.service';
+import { UpdateProductService } from 'src/app/services/update-product.service';
 
 @Component({
   selector: 'app-product-details-update',
@@ -19,11 +20,14 @@ export class ProductDetailsUpdateComponent implements OnInit {
 
   product: Product = new Product();
   productStatus: boolean[] = [true, false];
+  isDisabled: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
     private productService: ProductService,
-    private route: ActivatedRoute
+    private updateProductService: UpdateProductService,
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -131,5 +135,36 @@ export class ProductDetailsUpdateComponent implements OnInit {
     let product = new Product();
     product = this.productFormGroup.controls['product'].value;
     console.log(product);
+
+    if (!this.productFormGroup.invalid) {
+      this.isDisabled = true;
+      // call REST API via the CheckoutService
+      this.updateProductService.updateProduct(product).subscribe({
+        next: (response: {}) => {
+          alert(
+            // `Your order has been received.\nOrder tracking number: ${response}`
+            // console.log("It works!")
+            `It works!`
+          );
+
+          // reset cart
+          this.resetCart();
+          this.isDisabled = false;
+        },
+
+        error: (err: { message: any }) => {
+          alert(`There was an error: ${err.message}`);
+          this.isDisabled = false;
+        },
+      });
+    }
+  }
+
+  resetCart() {
+    // reset the form
+    this.productFormGroup.reset();
+
+    // navigate back to the products page
+    this.router.navigateByUrl('/products');
   }
 }
