@@ -149,10 +149,10 @@
                   class="alert alert-danger mt-1">
 
                   <div
-                    *ngIf="shippingAddressStreet?.errors?.['required'] || shippingAddressStreet?.errors?.['notOnlyWhitespace']">
+                    *ngIf="shippingAddressBarangay?.errors?.['required'] || shippingAddressBarangay?.errors?.['notOnlyWhitespace']">
                     Barangay is required
                   </div>
-                  <div *ngIf="shippingAddressZipCode?.errors?.['minlength']">
+                  <div *ngIf="shippingAddressBarangay?.errors?.['minlength']">
                     Barangay must be at least 2 characters long.
                   </div>
                 </div>
@@ -298,7 +298,7 @@
                     *ngIf="billingAddressBarangay?.errors?.['required'] || billingAddressBarangay?.errors?.['notOnlyWhitespace']">
                     Barangay is required
                   </div>
-                  <div *ngIf="shippingAddressZipCode?.errors?.['minlength']">
+                  <div *ngIf="billingAddressBarangay?.errors?.['minlength']">
                     Barangay must be at least 2 characters long.
                   </div>
                 </div>

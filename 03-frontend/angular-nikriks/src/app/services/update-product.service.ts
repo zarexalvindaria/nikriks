@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UpdateProductService {
-  private productUrl = environment.nikriksApiUrl + '/product-update/48';
+  private productUrl = environment.nikriksApiUrl + '/products/48';
 
   constructor(private httpClient: HttpClient) {}
 

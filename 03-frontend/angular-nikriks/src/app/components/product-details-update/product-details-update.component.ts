@@ -21,6 +21,7 @@ export class ProductDetailsUpdateComponent implements OnInit {
   product: Product = new Product();
   productStatus: boolean[] = [true, false];
   isDisabled: boolean = false;
+  theProductId: number = 0;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -72,11 +73,16 @@ export class ProductDetailsUpdateComponent implements OnInit {
     const theProductId: number = +this.route.snapshot.paramMap.get('id')!;
     this.productService.getProduct(theProductId).subscribe((data: Product) => {
       this.product = data;
+      console.log(`theProductId: ${theProductId}`);
       this.setDefaultValues();
+      return theProductId;
     });
   }
 
   setDefaultValues() {
+    // Set SKU default Value
+    // this.productFormGroup.get('product.id')?.patchValue(this.product['id']);
+
     // Set SKU default Value
     this.productFormGroup.get('product.sku')?.patchValue(this.product['sku']);
 
@@ -99,11 +105,14 @@ export class ProductDetailsUpdateComponent implements OnInit {
       ?.patchValue(this.product['imageUrl']);
 
     // Set Product Name default Value
-    this.productFormGroup
-      .get('product.active')
-      ?.patchValue(this.product['active']);
+    // this.productFormGroup
+    //   .get('product.active')
+    //   ?.patchValue(this.product['active']);
   }
 
+  get id() {
+    return this.theProductId;
+  }
   get sku() {
     return this.productFormGroup.get('product.sku');
   }
@@ -135,6 +144,7 @@ export class ProductDetailsUpdateComponent implements OnInit {
     let product = new Product();
     product = this.productFormGroup.controls['product'].value;
     console.log(product);
+    console.log(`Product Id #2: ${this.theProductId}`);
 
     if (!this.productFormGroup.invalid) {
       this.isDisabled = true;
@@ -165,6 +175,6 @@ export class ProductDetailsUpdateComponent implements OnInit {
     this.productFormGroup.reset();
 
     // navigate back to the products page
-    this.router.navigateByUrl('/products');
+    this.router.navigateByUrl('/catalog-management');
   }
 }
