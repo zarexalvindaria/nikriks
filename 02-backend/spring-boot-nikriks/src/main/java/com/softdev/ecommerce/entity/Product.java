@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
-@Table(name="product")
+@Table(name = "product")
 @Data
 public class Product {
     @Id
@@ -37,7 +37,7 @@ public class Product {
     private String imageUrl;
 
     @Column(name = "active")
-    private boolean active;
+    private String active;
 
     @Column(name = "units_in_stock")
     private int unitsInStock;
@@ -49,4 +49,9 @@ public class Product {
     @Column(name = "last_updated")
     @UpdateTimestamp
     private Date lastUpdated;
+
+    public Product save(Product product) {
+        return product.save(this);
+    }
+
 }

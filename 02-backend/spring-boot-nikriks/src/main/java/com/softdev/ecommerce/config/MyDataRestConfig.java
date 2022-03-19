@@ -31,8 +31,17 @@ public class MyDataRestConfig implements RepositoryRestConfigurer {
     @Override
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
 
-        HttpMethod[] theUnsupportedActions = {HttpMethod.PUT, HttpMethod.POST,
-                                              HttpMethod.DELETE, HttpMethod.PATCH};
+        HttpMethod[] theUnsupportedActions = {HttpMethod.POST,
+                HttpMethod.DELETE, HttpMethod.PATCH};
+
+        HttpMethod[] theSupportedActions = {HttpMethod.PUT};
+
+        // disable HTTP methods for Products: PUT
+        config.getExposureConfiguration()
+                .forDomainType(Product.class)
+                .withItemExposure((metdata, httpMethods) -> httpMethods.enable(theUnsupportedActions))
+                .withCollectionExposure((metdata, httpMethods) -> httpMethods.enable(theUnsupportedActions));
+
 
         // disable HTTP methods for Products: PUT, POST and DELETE
         config.getExposureConfiguration()
