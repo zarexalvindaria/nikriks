@@ -55,7 +55,7 @@
             <div class="col-md-9">
               <div class="input-space">
                 <input formControlName="mobileNumber" id="mobileNumber" type="text" />
-                <div *ngIf="mobileNumber?.invalid && (mobileNumber?.dirty)" class="alert alert-danger mt-1">
+                <div *ngIf="mobileNumber?.invalid && (mobileNumber?.dirty || mobileNumber?.touched)" class="alert alert-danger mt-1">
 
                   <div *ngIf="mobileNumber?.errors?.['required']">
                     Mobile Number is required
@@ -209,20 +209,6 @@
             <div class="col-md-9">
               <div class="input-space">
                 <input formControlName="zipCode" id=" shippingZipCode" type="text" />
-
-                <!-- <div
-                  *ngIf="shippingAddressZipCode?.invalid && (shippingAddressZipCode?.dirty || shippingAddressZipCode?.touched)"
-                  class="alert alert-danger mt-1">
-
-                  <div
-                    *ngIf="shippingAddressZipCode?.errors?.['required'] || shippingAddressZipCode?.errors?.['notOnlyWhitespace']">
-                    Zip code is required
-                  </div>
-
-                  <div *ngIf="shippingAddressZipCode?.errors?.['minlength']">
-                    Zip code must be at least 2 characters long.
-                  </div>
-                </div> -->
               </div>
             </div>
           </div>
