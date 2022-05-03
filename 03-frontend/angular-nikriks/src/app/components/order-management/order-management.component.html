@@ -9,6 +9,7 @@
                     <tr>
                         <th>Customer Name</th>
                         <th>Email Address</th>
+                        <th>Mobile Number</th>
                         <th>Order Tracking Number</th>
                         <th>Total Price</th>
                         <th>Total Quantity</th>
@@ -28,6 +29,9 @@
                         </td>
                         <td>
                             {{ tempOrderHistory.customer['email'] }}
+                        </td>
+                        <td>
+                            {{ tempOrderHistory.customer['mobileNumber'] }}
                         </td>
                         <td>
                             {{ tempOrderHistory.orderTrackingNumber }}
