@@ -30,9 +30,9 @@ export class LoginStatusComponent implements OnInit {
       this.oktaAuthService.getUser().then((res) => {
         this.userFirstName = res.given_name;
 
-        console.log(`user: ` + JSON.stringify(res));
+        // console.log(`user: ` + JSON.stringify(res));
         this.isAdmin = res['groups'].includes('Administrator');
-        console.log('userGroup: ' + this.userGroup);
+        // console.log('userGroup: ' + this.userGroup);
 
         // retrieve the user's email from authentication response
         const theEmail = res.email;

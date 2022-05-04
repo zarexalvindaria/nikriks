@@ -20,7 +20,7 @@ export class CatalogManagementComponent implements OnInit {
     this.catalogManagementService.getProductList().subscribe((data) => {
       this.products = data._embedded.products;
 
-      console.log(`Products: ` + JSON.stringify(this.products));
+      // console.log(`Products: ` + JSON.stringify(this.products));
     });
   }
 }

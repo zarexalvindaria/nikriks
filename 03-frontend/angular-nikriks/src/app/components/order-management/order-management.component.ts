@@ -24,7 +24,7 @@ export class OrderManagementComponent implements OnInit {
       this.orderHistoryList = data._embedded.orders;
 
       JSON.parse(this.storage.getItem('userEmail')!);
-      console.log(`Customer Orders: ` + JSON.stringify(this.orderHistoryList));
+      // console.log(`Customer Orders: ` + JSON.stringify(this.orderHistoryList));
     });
   }
 }

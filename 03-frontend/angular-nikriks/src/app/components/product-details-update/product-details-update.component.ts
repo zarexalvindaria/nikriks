@@ -73,7 +73,7 @@ export class ProductDetailsUpdateComponent implements OnInit {
     const theProductId: number = +this.route.snapshot.paramMap.get('id')!;
     this.productService.getProduct(theProductId).subscribe((data: Product) => {
       this.product = data;
-      console.log(`theProductId: ${theProductId}`);
+      // console.log(`theProductId: ${theProductId}`);
       this.setDefaultValues();
       return theProductId;
     });
@@ -133,7 +133,7 @@ export class ProductDetailsUpdateComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('Handling the submit button');
+    // console.log('Handling the submit button');
 
     if (this.productFormGroup.invalid) {
       this.productFormGroup.markAllAsTouched();
@@ -143,8 +143,8 @@ export class ProductDetailsUpdateComponent implements OnInit {
     // Set up product for update
     let product = new Product();
     product = this.productFormGroup.controls['product'].value;
-    console.log(product);
-    console.log(`Product Id #2: ${this.theProductId}`);
+    // console.log(product);
+    // console.log(`Product Id #2: ${this.theProductId}`);
 
     if (!this.productFormGroup.invalid) {
       this.isDisabled = true;

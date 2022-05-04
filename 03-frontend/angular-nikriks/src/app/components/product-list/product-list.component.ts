@@ -58,9 +58,9 @@ export class ProductListComponent implements OnInit {
 
     this.previousKeyword = theKeyword;
 
-    console.log(
-      `keyword=${theKeyword}, thePageNumber=${this.thePageNumber}, thePageSize=${this.thePageSize}`
-    );
+    // console.log(
+    //   `keyword=${theKeyword}, thePageNumber=${this.thePageNumber}, thePageSize=${this.thePageSize}`
+    // );
 
     // now search for the products using keyword
     this.productService
@@ -102,9 +102,9 @@ export class ProductListComponent implements OnInit {
 
     this.previousCategoryId = this.currentCategoryId;
 
-    console.log(
-      `currentCategoryId=${this.currentCategoryId}, thePageNumber=${this.thePageNumber}`
-    );
+    // console.log(
+    //   `currentCategoryId=${this.currentCategoryId}, thePageNumber=${this.thePageNumber}`
+    // );
 
     // now get the products for the given category id
     this.productService
@@ -135,7 +135,7 @@ export class ProductListComponent implements OnInit {
   }
 
   addToCart(theProduct: Product) {
-    console.log(`Adding to cart: ${theProduct.name}, ${theProduct.unitPrice}`);
+    // console.log(`Adding to cart: ${theProduct.name}, ${theProduct.unitPrice}`);
 
     // TODO ... do the real work
     const theCartItem = new CartItem(theProduct);

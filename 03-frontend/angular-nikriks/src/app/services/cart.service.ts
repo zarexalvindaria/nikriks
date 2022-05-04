@@ -78,20 +78,20 @@ export class CartService {
   }
 
   logCartData(totalPriceValue: number, totalQuantityValue: number) {
-    console.log('Contents of the cart');
+    // console.log('Contents of the cart');
     for (let tempCartItem of this.cartItems) {
       const subtotalPrice = tempCartItem.quantity * tempCartItem.unitPrice;
-      console.log(`name: ${tempCartItem.name}, 
-      quantity=${tempCartItem.quantity}, 
-      unitPrice=${tempCartItem.unitPrice}, 
-      subtotalPrice ${subtotalPrice}`);
+      // console.log(`name: ${tempCartItem.name}, 
+      // quantity=${tempCartItem.quantity}, 
+      // unitPrice=${tempCartItem.unitPrice}, 
+      // subtotalPrice ${subtotalPrice}`);
 
-      console.log(
-        `totalPrice: ${totalPriceValue.toFixed(
-          2
-        )}, totalQuantity: ${totalQuantityValue}`
-      );
-      console.log(`-----`);
+      // console.log(
+      //   `totalPrice: ${totalPriceValue.toFixed(
+      //     2
+      //   )}, totalQuantity: ${totalQuantityValue}`
+      // );
+      // console.log(`-----`);
     }
   }
 

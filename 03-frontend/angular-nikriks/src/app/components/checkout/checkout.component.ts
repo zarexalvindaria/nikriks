@@ -143,7 +143,7 @@ export class CheckoutComponent implements OnInit {
     // populate countries
 
     this.nikRiksFormService.getCountries().subscribe((data) => {
-      console.log('Retrieved countries: ' + JSON.stringify(data));
+      // console.log('Retrieved countries: ' + JSON.stringify(data));
       this.countries = data;
     });
   }
@@ -267,7 +267,7 @@ export class CheckoutComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('Handling the submit button');
+    // console.log('Handling the submit button');
 
     if (this.checkoutFormGroup.invalid) {
       this.checkoutFormGroup.markAllAsTouched();
@@ -328,7 +328,7 @@ export class CheckoutComponent implements OnInit {
     this.paymentInfo.currency = 'PHP';
     this.paymentInfo.receiptEmail = purchase.customer?.email;
 
-    console.log(`this.paymentInfo.amount: ${this.paymentInfo.amount}`);
+    // console.log(`this.paymentInfo.amount: ${this.paymentInfo.amount}`);
 
     // if valid form then
     // - create payment intent
@@ -418,8 +418,8 @@ export class CheckoutComponent implements OnInit {
     const countryCode = formGroup?.value.country.code;
     const countryName = formGroup?.value.country.name;
 
-    console.log(`${formGroupName} country code: ${countryCode}`);
-    console.log(`${formGroupName} country name: ${countryName}`);
+    // console.log(`${formGroupName} country code: ${countryCode}`);
+    // console.log(`${formGroupName} country name: ${countryName}`);
 
     this.nikRiksFormService.getRegions(countryCode).subscribe((data) => {
       if (formGroupName === 'shippingAddress') {
