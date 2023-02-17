@@ -8,7 +8,7 @@ NikRik’s Batangas Lomi atbp., is a startup food business located in Pasay City
 
 
 ## Preview 
-<img src="https://raw.githubusercontent.com/zarexalvindaria/nikriks/main/00-starter-files/images/nikriks_screenshot.png?token=GHSAT0AAAAAABSOXJTBGNMLFBJJTPVHUAL2YR4W4HQ">
+<img src="https://raw.githubusercontent.com/zarexalvindaria/nikriks/main/00.%20full-cloud/00-starter-files/images/nikriks_screenshot.png">
 
 
 
