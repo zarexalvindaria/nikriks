@@ -1,0 +1,141 @@
+<div class="main-content page-m">
+    <div class="container-fluid">
+        <form [formGroup]="productFormGroup">
+            <div formGroupName="product" class="form-area">
+                <h3>{{ product.name }}</h3>
+
+                <div class="row">
+                    <div class="col-md-2"><label>SKU</label></div>
+                    <div class="col-md-9">
+                        <div class="input-space">
+                            <input formControlName="sku" id="sku" type="text" />
+
+                            <div *ngIf=" sku?.invalid && (sku?.dirty || sku?.touched)" class="alert alert-danger mt-1">
+
+                                <div *ngIf="sku?.errors?.['required']">
+                                    SKU is required
+                                </div>
+
+                                <div *ngIf="sku?.errors?.['minlength']">
+                                    SKU must be at least 2 characters long.
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2"><label>Product Name</label></div>
+                    <div class="col-md-9">
+                        <div class="input-space">
+                            <input formControlName="name" id="product-name" type="text" />
+
+                            <div *ngIf="name?.invalid && (name?.dirty || name?.touched)"
+                                class="alert alert-danger mt-1">
+
+                                <div *ngIf="name?.errors?.['required']">
+                                    Product Name is required.
+                                </div>
+
+                                <div *ngIf="name?.errors?.['minlength']">
+                                    Product Name must be at least 2 characters long.
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2"><label>Product Description</label></div>
+                    <div class="col-lg-9">
+
+                        <div class="input-space">
+                            <textarea class="form-control" formControlName="description" id="product-description"
+                                rows="5" type="text"></textarea>
+
+                            <div *ngIf="description?.invalid && (description?.dirty || description?.touched)"
+                                class="alert alert-danger mt-1">
+
+                                <div *ngIf="description?.errors?.['required']">
+                                    Product Description is required.
+                                </div>
+
+                                <div *ngIf="description?.errors?.['minlength']">
+                                    Product Description must be at least 2 characters long.
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2"><label>Unit Price</label></div>
+                    <div class="col-md-9">
+                        <div class="input-space">
+                            <input formControlName="unitPrice" id="unitPrice" type="text" />
+
+                            <div *ngIf="unitPrice?.invalid && (unitPrice?.dirty || unitPrice?.touched)"
+                                class="alert alert-danger mt-1">
+
+                                <div *ngIf="unitPrice?.errors?.['required']">
+                                    Unit Price is required.
+                                </div>
+
+                                <div *ngIf="unitPrice?.errors?.['minlength']">
+                                    Unit Price must be at least 2 characters long.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2"><label>Image URL</label></div>
+                    <div class="col-md-9">
+                        <div class="input-space">
+                            <input formControlName="imageUrl" id="`product-image-{{product.id}}`" type="text" />
+
+                            <div *ngIf="imageUrl?.invalid && (imageUrl?.dirty || imageUrl?.touched)"
+                                class="alert alert-danger mt-1">
+
+                                <div *ngIf="imageUrl?.errors?.['required']">
+                                    The Image URL is required.
+                                </div>
+
+                                <div *ngIf="imageUrl?.errors?.['minlength']">
+                                    The Image URL must be at least 2 characters long.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-2"><label>Is Available</label></div>
+                    <div class="col-md-9">
+                        <div class="input-space">
+
+                            <select id="`product-status-{{product.id}}`" formControlName="active">
+                                <option *ngFor="let status of productStatus">{{ status }}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col text-center">
+                    <button (click)="onSubmit()" id="save-product-{{product.id}}" class="btn btn-primary btn-sm">Save
+                        Product</button>
+                </div>
+                <hr />
+
+                <a routerLink="/catalog-management" class="mt-5">Back to Catalog Management</a>
+
+
+            </div>
+        </form>
+    </div>
+</div>

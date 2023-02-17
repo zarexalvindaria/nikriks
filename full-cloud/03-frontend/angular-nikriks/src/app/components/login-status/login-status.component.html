@@ -1,0 +1,17 @@
+<div *ngIf="!isAuthenticated">
+    <button routerLink="/login" class="security-btn" id="login">Login</button>
+</div>
+<div *ngIf="isAuthenticated" ngbDropdown>
+    <button class="security-btn" id="profile" ngbDropdownToggle style="padding:0 10px 0 10px;">{{ userFirstName
+        }}</button>
+    <div ngbDropdownMenu>
+        <li>
+            <button *ngIf="isAuthenticated && !isAdmin" ngbDropdownItem routerLink="/order-history" id="order-history"
+                routerLinkActive="active-link">Order History</button>
+        </li>
+        <li>
+            <button *ngIf="isAuthenticated" ngbDropdownItem (click)="logout()" id="logout"
+                routerLinkActive="active-link">Logout</button>
+        </li>
+    </div>
+</div>

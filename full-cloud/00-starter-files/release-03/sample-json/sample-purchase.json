@@ -1,0 +1,33 @@
+{
+   "customer":{
+      "firstName":"afasa",
+      "lastName":"afasa",
+      "email":"afasa@test.com"
+   },
+   "shippingAddress":{
+      "street":"afasa",
+      "city":"afasa",
+      "region":"Region I (Ilocos Region)",
+      "country":"Philippines",
+      "zipCode":"19111"
+   },
+   "billingAddress":{
+      "street":"fsfsf",
+      "city":"sfdsf",
+      "region":"Region I (Ilocos Region)",
+      "country":"Philippines",
+      "zipCode":"19111"
+   },
+   "order":{
+      "totalPrice":170,
+      "totalQuantity":2
+   },
+   "orderItems":[
+      {
+         "imageUrl":"assets/images/products/placeholder.png",
+         "quantity":2,
+         "unitPrice":85,
+         "productId":1
+      }
+   ]
+}

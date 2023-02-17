@@ -1,0 +1,39 @@
+footer {
+  background: #646464;
+  background-color: #646464;
+  opacity: 1;
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  bottom: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #b4a340;
+}
+
+ul,
+ol {
+  padding-left: 0;
+}
+
+.social-media {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+svg {
+  margin: 0 10px 10px 10px;
+}
+
+path {
+  fill: #fff;
+}
+
+path:hover {
+  fill: #b4a340;
+}

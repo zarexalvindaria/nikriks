@@ -1,0 +1,11 @@
+<div ngbDropdown>
+  <button class="security-btn" ngbDropdownToggle style="padding:0 10px 0 10px;">Categories</button>
+  <div ngbDropdownMenu>
+    <li *ngFor="let tempProductCategory of productCategories">
+      <button ngbDropdownItem routerLink="/category/{{ tempProductCategory.id }}/{{
+        tempProductCategory.categoryName
+      }}" routerLinkActive="active-link">
+        {{ tempProductCategory.categoryName }}</button>
+    </li>
+  </div>
+</div>

@@ -1,0 +1,79 @@
+<div class="main-content">
+    <div class="section-content section-content-p30">
+        <div class="container-fluid">
+            <h3>Order Management</h3>
+            <hr />
+
+            <div *ngIf="orderHistoryList.length > 0">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Customer Name</th>
+                        <th>Email Address</th>
+                        <th>Mobile Number</th>
+                        <th>Order Tracking Number</th>
+                        <th>Total Price</th>
+                        <th>Total Quantity</th>
+                        <th>Order Date</th>
+                        <th>Delivery Address</th>
+                        <th>Delivery Date</th>
+                        <th>Is Paid</th>
+                        <th>Order Status</th>
+                    </tr>
+
+                    <tr *ngFor="let tempOrderHistory of orderHistoryList">
+
+                        <td>
+                            {{ tempOrderHistory.customer['firstName'] }}
+                            {{ tempOrderHistory.customer['lastName']
+                            }}
+                        </td>
+                        <td>
+                            {{ tempOrderHistory.customer['email'] }}
+                        </td>
+                        <td>
+                            {{ tempOrderHistory.customer['mobileNumber'] }}
+                        </td>
+                        <td>
+                            {{ tempOrderHistory.orderTrackingNumber }}
+                        </td>
+                        <td>
+                            {{ tempOrderHistory.totalPrice | currency: 'PHP' }}
+                        </td>
+                        <td>
+                            {{ tempOrderHistory.totalQuantity }}
+                        </td>
+                        <td>
+                            {{ tempOrderHistory.dateCreated | date: 'medium' }}
+                        </td>
+                        <td>
+                            <span>{{ tempOrderHistory.shippingAddress['street'] }},
+                                {{ tempOrderHistory.shippingAddress['barangay'] }},
+                                {{ tempOrderHistory.shippingAddress['city'] }},
+                                {{ tempOrderHistory.shippingAddress['region'] }}
+                            </span>
+                            <span *ngIf="tempOrderHistory.shippingAddress['zipCode'] != ''">
+                                {{ tempOrderHistory.shippingAddress['zipCode'] }}
+                            </span>
+                        </td>
+                        <td></td>
+                        <td>
+                            {{ tempOrderHistory.paid }}
+                        </td>
+                        <td>
+                            {{ tempOrderHistory.orderStatus }}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <!-- if order history is empty then display a message -->
+            <div *ngIf="orderHistoryList.length == 0" class="alert alert-warning col-md-12" role="alert">
+                No orders found.
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

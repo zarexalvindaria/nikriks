@@ -1,0 +1,8 @@
+<div class="search-bar">
+  <input #myInput type="text" placeholder="Search our food offerings ..." class="dropdown-toggle au-input au-input-xl"
+    (keyup.enter)="doSearch(myInput.value)" />
+
+  <button (click)="doSearch(myInput.value)" class="au-btn-submit mr-3">
+    Search
+  </button>
+</div>

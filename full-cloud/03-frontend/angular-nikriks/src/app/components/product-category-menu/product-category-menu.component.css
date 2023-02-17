@@ -1,0 +1,20 @@
+a {
+  text-decoration: none;
+}
+
+.navbar-sidebar .navbar-list li a:hover {
+  color: #b4a340;
+}
+
+.social-media {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  margin-top: 200px;
+}
+
+svg {
+  vertical-align: middle;
+  margin: 5px;
+}

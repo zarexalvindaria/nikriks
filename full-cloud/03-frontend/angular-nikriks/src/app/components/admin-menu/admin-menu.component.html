@@ -1,0 +1,18 @@
+<div *ngIf="isAuthenticated && isAdmin" ngbDropdown>
+    <button class="security-btn" id="admin-dashboard" ngbDropdownToggle style="padding:0 10px 0 10px;">Administrator
+        Dashboard</button>
+    <div ngbDropdownMenu>
+        <li>
+            <button *ngIf="isAuthenticated && isAdmin" ngbDropdownItem routerLink="/catalog-management"
+                id="customer-orders" routerLinkActive="active-link">Catalog Management</button>
+        </li>
+        <li>
+            <button *ngIf="isAuthenticated && isAdmin" ngbDropdownItem routerLink="/order-management"
+                id="customer-orders" routerLinkActive="active-link">Order Management</button>
+        </li>
+        <li>
+            <button *ngIf="isAuthenticated && isAdmin" ngbDropdownItem routerLink="/user-management"
+                id="Admin Dashboard" routerLinkActive="active-link">User Management</button>
+        </li>
+    </div>
+</div>

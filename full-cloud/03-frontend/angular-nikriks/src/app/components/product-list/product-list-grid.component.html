@@ -1,0 +1,59 @@
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <h4>Category: {{ currentCategoryName }}</h4>
+    <hr />
+    <div class="container-fluid">
+      <div class="row">
+        <!-- loop over the collection of products-->
+        <div *ngFor="let tempProduct of products; let i = index" [attr.data-index]="i" class="col-md-3">
+          <div class="product-box">
+            <a routerLink="/products/{{ tempProduct.id }}">
+              <img src="{{ tempProduct.imageUrl }}" class="img-responsive" />
+            </a>
+            <br />
+
+            <a class="product-name" routerLink="/products/{{ tempProduct.id }}">
+              <h1>{{ tempProduct.name }}</h1>
+            </a>
+
+            <div class="price">
+              {{ tempProduct.unitPrice | currency: "PHP" }}
+            </div>
+            <button (click)="addToCart(tempProduct)" class="btn btn-primary btn-sm" id="add-cart-{{i}}">
+              Add to cart
+            </button>
+          </div>
+        </div>
+
+        <!-- if products empty then display a message -->
+        <div *ngIf="products?.length == 0" class="alert alert-warning cold-md-12" role="alert">
+          No products found.
+        </div>
+      </div>
+
+      <!-- begin footer -->
+      <div class="footer-pagination">
+
+        <div class="center">
+          <div class="col-12 justify-content-center">
+            <ngb-pagination [(page)]="thePageNumber" [pageSize]="thePageSize" [collectionSize]="theTotalElements"
+              [maxSize]="5" [boundaryLinks]="true" (pageChange)="listProducts()">
+            </ngb-pagination>
+          </div>
+
+          <span class="mr-2">Page Size &nbsp;&nbsp;</span>
+
+          <select #currentSelection (change)="updatePageSize(+currentSelection.value)">
+            <option>2</option>
+            <option>5</option>
+            <option selected="true">10</option>
+            <option>20</option>
+            <option>50</option>
+          </select>
+        </div>
+
+
+      </div>
+      <!-- end footer -->
+    </div>
+  </div>
