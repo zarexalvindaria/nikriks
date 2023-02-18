@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  nikriksApiUrl: 'https://zarexalvindaria-zany-telegram-696r96qpr5x34vqx-8443.app.github.dev/api', // codespace Url
+  nikriksApiUrl: 'https://zarexalvindaria-legendary-umbrella-x56956745gv2pjqv-8443.app.github.dev/api', // codespace Url
   // nikriksApiUrl: 'http://localhost:8443/api',
   // nikriksApiUrl:
     // 'https://nikriksapp-cloud-backend-1-emomen44da-uc.a.run.app/api', // cloud-hosted Url
