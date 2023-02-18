@@ -8,15 +8,15 @@
 
 ### 1. Build the backend image
 
-`docker build -t nikriksapp-cloud-backend:latest .`
+`docker build -t nikriksapp-docker-backend:latest .`
 
 ### 2. Add tag to image
 
-`docker tag nikriksapp-cloud-backend gcr.io/firm-reef-340401/nikriksapp-cloud-backend`
+`docker tag nikriksapp-cloud-backend zarexalvindaria/nikriksapp-docker-backend`
 
-### 5. Push image to DockerHub
+### 3. Push image to DockerHub
 
-`docker push gcr.io/firm-reef-340401/nikriksapp-cloud-backend`
+`docker push zarexalvindaria/nikriksapp-docker-backend`
 
 
 
@@ -50,16 +50,16 @@
 
 
 ###  2. Build the backend image
-`docker build -t nikriksapp-backend:latest .`
+`docker build -t nikriksapp-docker-backend:latest .`
 
 ### 3. __Run the image under the nikriks network specifying its ip address and port at 172.18.0.3: 8443__
-`docker run --name nikriksapp-backend --network nikriks --ip 172.18.0.3 -p 8443:8443 -d nikriksapp-backend:latest`
+`docker run --name nikriksapp-docker-backend --network nikriks --ip 172.18.0.3 -p 8443:8443 -d nikriksapp-docker-backend:latest`
 
 ### 4. Add tag to image
-`docker tag nikriksapp-backend zarexalvindaria/nikriksapp-backend:latest`
+`docker tag nikriksapp-docker-backend zarexalvindaria/nikriksapp-docker-backend:latest`
 
 ### 5. Push image to DockerHub
-`docker push zarexalvindaria/nikriksapp-backend:latest`
+`docker push zarexalvindaria/nikriksapp-docker-backend:latest`
 
 
 
@@ -72,8 +72,8 @@
 `docker network create --subnet=172.18.0.0/16 nikriks`
 
 ### 2. Pull Nikrik's Backend Spring Boot image from DockerHub
-`docker pull zarexalvindaria/nikriksapp-backend:latest `
+`docker pull zarexalvindaria/nikriksapp-docker-backend:latest `
 
 ### 3. __Run the image under the nikriks-network specifying its ip address and port at 172.18.0.3: 8443__
-`docker run --name nikriksapp-backend --network nikriks --ip 172.18.0.3 -p 8443:8443-d zarexalvindaria/nikriksapp-backend:latest`
+`docker run --name nikriksapp-docker-backend --network nikriks --ip 172.18.0.3 -p 8443:8443-d zarexalvindaria/nikriksapp-docker-backend:latest`
 
