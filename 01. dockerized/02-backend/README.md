@@ -19,7 +19,7 @@ __Note:__ You should be in the `\spring-boot-nikriks` directory for this to work
 
 ### 3. Add tag to image
 
-`docker tag nikriksapp-cloud-backend zarexalvindaria/nikriksapp-docker-backend`
+`docker tag nikriksapp-docker-backend zarexalvindaria/nikriksapp-docker-backend`
 
 ### 4. Push image to DockerHub
 
