@@ -21,10 +21,17 @@ __Note:__ Creating the Nikrik's network is required in order for the database an
 ### 3. Run the image under the nikriks network at port 3310
 `docker run --name nikriksapp-db --network nikriks --ip 172.18.0.2 -p 3310:3306 -d nikriksapp-db:latest`
 
-### 5. Add tag to image
+### 4. Add tag to image
 `docker tag nikriksapp-db zarexalvindaria/nikriksapp-db:latest`
 
-### 5. Push image to DockerHub
+### 5. Authenticate with Github Container Registry using your PAT
+
+```
+export CR_PAT=<TOKEN>
+echo $CR_PAT | docker login ghcr.io -u $USERNAME --password-stdin
+```
+
+### 6. Push image to DockerHub (or Github Container Registry)
 `docker push zarexalvindaria/nikriksapp-db:latest`
 
 

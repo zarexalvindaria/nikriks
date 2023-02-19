@@ -1,5 +1,6 @@
 FROM mysql
 MAINTAINER zarexalvindaria@gmail.com
+LABEL org.opencontainers.image.source https://github.com/zarexalvindaria/nikriks
 
 # Set environment param
 ENV MYSQL_DATABASE=full-stack-nikriks
